@@ -108,6 +108,11 @@ export default function Navbar() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                  <Link href="/pricing">Pricing</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                   <Link href="/about">About</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -142,6 +147,7 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
+          <Link href="/pricing" className="px-4 py-2 font-semibold text-secondary rounded-md hover:bg-accent">Pricing</Link>
           <Link href="/about" className="px-4 py-2 font-semibold text-secondary rounded-md hover:bg-accent">About</Link>
           <Link href="/contact" className="px-4 py-2 font-semibold text-secondary rounded-md hover:bg-accent">Contact</Link>
           <Link href="/contact" className="mt-4">
