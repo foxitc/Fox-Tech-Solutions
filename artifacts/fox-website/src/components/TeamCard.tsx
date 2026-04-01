@@ -1,0 +1,26 @@
+interface TeamCardProps {
+  name: string;
+  role: string;
+  bio: string;
+  initials: string;
+}
+
+export default function TeamCard({ name, role, bio, initials }: TeamCardProps) {
+  return (
+    <div className="flex flex-col items-center text-center group" data-testid={`team-card-${name.toLowerCase().replace(/\s/g, '-')}`}>
+      {/* Photo placeholder — replace the background div with an <img> when ready */}
+      <div className="relative mb-5">
+        <div className="w-40 h-40 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center border-2 border-border group-hover:border-primary/40 transition-colors overflow-hidden">
+          {/* TODO: Replace this div with <img src="your-photo.jpg" alt={name} className="w-full h-full object-cover" /> */}
+          <span className="font-display font-bold text-3xl text-primary">{initials}</span>
+        </div>
+        <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <div className="w-2 h-2 bg-white rounded-full" />
+        </div>
+      </div>
+      <h3 className="font-display font-bold text-lg text-secondary">{name}</h3>
+      <p className="text-sm font-medium text-primary mb-2">{role}</p>
+      <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">{bio}</p>
+    </div>
+  );
+}

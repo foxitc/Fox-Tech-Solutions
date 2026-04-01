@@ -1,0 +1,154 @@
+import React from "react";
+import { Link, useLocation } from "wouter";
+import { Button } from "@/components/ui/button";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+import { Menu, X, Shield, Server, Wifi, Phone, Activity } from "lucide-react";
+
+const services = [
+  {
+    title: "Managed IT Support",
+    href: "/services/managed-it",
+    description: "We become your IT department. Fast response, plain English.",
+    icon: <Server className="w-5 h-5 text-primary" />
+  },
+  {
+    title: "Cyber Security",
+    href: "/services/cyber-security",
+    description: "Protected, certified, and trained — before something goes wrong.",
+    icon: <Shield className="w-5 h-5 text-primary" />
+  },
+  {
+    title: "Connectivity",
+    href: "/services/connectivity",
+    description: "Fast, reliable connectivity — leased lines and broadband.",
+    icon: <Activity className="w-5 h-5 text-primary" />
+  },
+  {
+    title: "Mobile",
+    href: "/services/mobile",
+    description: "Business mobile sorted. O2, Vodafone, EE.",
+    icon: <Phone className="w-5 h-5 text-primary" />
+  },
+  {
+    title: "Microsoft 365",
+    href: "/services/microsoft-365",
+    description: "Licencing, compliance, SharePoint, Teams — handled.",
+    icon: <Server className="w-5 h-5 text-primary" />
+  },
+  {
+    title: "WiFi",
+    href: "/services/wifi",
+    description: "Qualified Unifi specialists. No dead zones.",
+    icon: <Wifi className="w-5 h-5 text-primary" />
+  },
+  {
+    title: "PAT Testing",
+    href: "/services/pat-testing",
+    description: "Keep your team safe and your compliance sorted.",
+    icon: <Activity className="w-5 h-5 text-primary" />
+  }
+];
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [location] = useLocation();
+
+  React.useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
+
+  return (
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2">
+          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+            <span className="text-primary-foreground font-display font-bold text-xl tracking-tight">F</span>
+          </div>
+          <span className="font-display font-bold text-2xl tracking-tight text-secondary">Fox IT</span>
+        </Link>
+
+        {/* Desktop Nav */}
+        <div className="hidden md:flex items-center gap-6">
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                  <Link href="/">Home</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                    {services.map((service) => (
+                      <li key={service.title}>
+                        <NavigationMenuLink asChild>
+                          <Link href={service.href} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="flex items-center gap-2 text-sm font-semibold text-secondary">
+                              {service.icon}
+                              {service.title}
+                            </div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
+                              {service.description}
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                  <Link href="/about">About</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+          
+          <Link href="/contact" className="hidden lg:block">
+            <Button size="lg" className="font-semibold shadow-sm hover:-translate-y-0.5 transition-transform">
+              Get in touch
+            </Button>
+          </Link>
+        </div>
+
+        {/* Mobile Toggle */}
+        <button
+          className="md:hidden p-2 text-secondary"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </div>
+
+      {/* Mobile Nav */}
+      {isOpen && (
+        <div className="md:hidden border-t border-border bg-background p-4 flex flex-col gap-4 absolute w-full shadow-lg">
+          <Link href="/" className="px-4 py-2 font-semibold text-secondary rounded-md hover:bg-accent">Home</Link>
+          <div className="px-4 py-2 font-semibold text-muted-foreground">Services</div>
+          <div className="pl-8 flex flex-col gap-2 border-l-2 border-accent ml-6">
+            {services.map(s => (
+              <Link key={s.title} href={s.href} className="py-2 text-sm text-secondary hover:text-primary transition-colors">
+                {s.title}
+              </Link>
+            ))}
+          </div>
+          <Link href="/about" className="px-4 py-2 font-semibold text-secondary rounded-md hover:bg-accent">About</Link>
+          <Link href="/contact" className="px-4 py-2 font-semibold text-secondary rounded-md hover:bg-accent">Contact</Link>
+          <Link href="/contact" className="mt-4">
+            <Button className="w-full">Get in touch</Button>
+          </Link>
+        </div>
+      )}
+    </header>
+  );
+}

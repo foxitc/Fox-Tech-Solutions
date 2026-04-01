@@ -1,0 +1,62 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "GXPjjTlFQ6uqGeXaT1dFX"
+uri = "file://artifacts/fox-website/src/assets/images/hero.png"
+type = "image"
+title = "Hero IT professionals"
+
+[[generated]]
+id = "G_DfzczKoSsJ9r4U0gV0T"
+uri = "file://artifacts/fox-website/src/assets/images/team-todd.png"
+type = "image"
+title = "Todd profile photo"
+
+[[generated]]
+id = "fSLM8YjjrTpKSBWbpH0xl"
+uri = "file://artifacts/fox-website/src/assets/images/team-fabio.png"
+type = "image"
+title = "Fabio profile photo"
+
+[[generated]]
+id = "75-sLZhHNcDv5YdO0h9ak"
+uri = "file://artifacts/fox-website/src/assets/images/team-member-1.png"
+type = "image"
+title = "Team member profile 1"
+
+[[generated]]
+id = "6G5HeHJGwkNuNQv31iOte"
+uri = "file://artifacts/fox-website/src/assets/images/team-member-2.png"
+type = "image"
+title = "Team member profile 2"
+
+[[generated]]
+id = "IMe3PVVQNMYCNRHLrkrWe"
+uri = "file://artifacts/fox-website/src/assets/images/service-managed-it.png"
+type = "image"
+title = "Managed IT abstract"
+
+[[generated]]
+id = "6exJZy4xoIaeuxgauzs4g"
+uri = "file://artifacts/fox-website/src/assets/images/service-cyber.png"
+type = "image"
+title = "Cyber Security abstract"
+
+[[generated]]
+id = "8vClaUceyLPPlkiES9AXa"
+uri = "file://artifacts/fox-website/src/assets/images/service-connectivity.png"
+type = "image"
+title = "Connectivity abstract"
+
+[[generated]]
+id = "52XHfXG6WcE8ueU1n828K"
+uri = "file://artifacts/fox-website/src/assets/images/service-mobile.png"
+type = "image"
+title = "Mobile communications"
+
+[[generated]]
+id = "NCp6vpBytgALN02M1NCW-"
+uri = "file://artifacts/fox-website/src/assets/images/service-m365.png"
+type = "image"
+title = "Microsoft 365 cloud"

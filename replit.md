@@ -1,3 +1,38 @@
+# Fox IT Website
+
+## Overview
+
+Complete marketing website for Fox IT — a UK managed IT services provider. Built as a static React + Vite app at the root path `/`.
+
+## Fox Website Structure
+
+- `artifacts/fox-website/` — Main Fox IT website (React + Vite, served at `/`)
+  - `src/pages/Home.tsx` — Homepage: hero, services overview, stats, team, CTA
+  - `src/pages/About.tsx` — About Us with team bios and values
+  - `src/pages/Contact.tsx` — Contact page with Odoo iframe embed
+  - `src/pages/services/ManagedIT.tsx` — Managed IT Support
+  - `src/pages/services/CyberSecurity.tsx` — Cyber Security (Essentials, Hornet, Training, Phishing)
+  - `src/pages/services/Connectivity.tsx` — Broadband & Leased Line
+  - `src/pages/services/Mobile.tsx` — Mobile (O2, Vodafone, EE)
+  - `src/pages/services/Microsoft365.tsx` — Microsoft 365 Management
+  - `src/pages/services/Wifi.tsx` — Unifi WiFi
+  - `src/pages/services/PatTesting.tsx` — PAT Testing
+  - `src/components/Navbar.tsx` — Sticky nav with services dropdown
+  - `src/components/Footer.tsx` — Footer with links and contact details
+  - `src/components/TeamCard.tsx` — Team member card (initials placeholder, swap in real photos)
+  - `src/components/ServicePageHero.tsx` — Reusable service page hero
+  - `src/index.css` — Fox brand theme: Deep Navy (#0f172a) + Electric Orange (#f97316) palette, Syne display font
+
+## TODOs for Fox
+
+- Replace placeholder phone (01234 567890) and email (hello@fox-it.co.uk) with real details
+- Add real Odoo contact form URL in `src/pages/Contact.tsx` (search for `TODO: Replace`)
+- Upload real team photos — edit `TeamCard.tsx` to use `<img>` instead of initials div
+- Fill in real About Us story (placeholders marked with TODO in `About.tsx`)
+- Fill in real address/region
+
+---
+
 # Workspace
 
 ## Overview
