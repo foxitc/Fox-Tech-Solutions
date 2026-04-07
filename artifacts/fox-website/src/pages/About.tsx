@@ -72,7 +72,7 @@ export default function About() {
               transition={{ duration: 0.5 }}
               className="text-primary font-semibold text-sm uppercase tracking-widest mb-3"
             >
-              About Fox
+              About Fox ITC
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -106,22 +106,20 @@ export default function About() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="font-display font-bold text-3xl md:text-4xl text-secondary mb-6">Our story</h2>
-              {/* TODO: Replace the placeholder text below with your real founding story */}
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Fox was founded with one simple idea — IT support should feel like talking to a mate, not a call centre. We're a small, expert team based in the UK, and we work with businesses across [your region], genuinely caring about getting it right every time.
+                  Fox ITC was born out of frustration. Todd and Fabio had both spent years working in IT — watching businesses get let down by providers who overpromised, underdelivered, and treated clients like ticket numbers rather than people.
                 </p>
                 <p>
-                  No tickets lost in a queue. No "have you tried turning it off and on again" nonsense. Just straight-talking, fast, reliable IT from people who actually know what they're doing.
+                  So they did something about it. Fox ITC was built from the ground up on a simple principle: treat every client the way you'd want to be treated yourself. That means answering the phone when it rings, fixing things properly the first time, and telling the truth even when it's not what someone wants to hear.
                 </p>
                 <p>
-                  We started because Todd and Fabio had seen too many businesses let down by IT providers who were great at sales and poor at delivery. Fox is the antidote to that.
+                  Based in the East Midlands, we support businesses across the UK — from small teams finding their feet to established companies managing complex multi-site operations. The size of the client doesn't change the standard of care. Every business deserves IT support that actually works.
                 </p>
                 <p>
-                  Since [founding year], we've supported businesses of all shapes and sizes — from five-person startups to established companies with multi-site operations. The approach doesn't change: know your clients, respond fast, and always tell the truth.
+                  We're not trying to be the biggest MSP in the country. We're trying to be the best one to work with. The kind of team you actually look forward to calling, because you know they'll sort it — and they'll be straight with you about what's going on.
                 </p>
               </div>
-              {/* End of placeholder text */}
             </motion.div>
 
             <motion.div

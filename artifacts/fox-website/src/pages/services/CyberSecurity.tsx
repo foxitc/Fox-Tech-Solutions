@@ -186,6 +186,8 @@ const otherServices = [
       "Patch management — software and OS kept up to date",
     ],
     extra: "We handle everything: the initial assessment and gap analysis, any remediation work needed, and the certification submission. You get the badge. We do the work. For businesses supplying the public sector, Cyber Essentials is increasingly mandatory. For everyone else, it's proof you're serious about security.",
+    link: "/services/cyber-essentials",
+    linkLabel: "Full Cyber Essentials guide →",
   },
   {
     icon: <BookOpen className="w-6 h-6 text-primary" />,
@@ -370,6 +372,13 @@ export default function CyberSecurity() {
                         ))}
                       </ul>
                       <p className="text-muted-foreground text-sm leading-relaxed">{svc.extra}</p>
+                      {"link" in svc && svc.link && (
+                        <div className="mt-4">
+                          <Link href={svc.link} className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
+                            {svc.linkLabel} <ArrowRight className="w-3.5 h-3.5" />
+                          </Link>
+                        </div>
+                      )}
                     </div>
                   </div>
                 )}
