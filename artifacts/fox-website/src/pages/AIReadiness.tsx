@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "wouter";
+import { SiWhatsapp } from "react-icons/si";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -985,6 +986,9 @@ export default function AIReadiness() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8 text-sm text-muted-foreground">
               <a href="tel:03300581877" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Phone className="w-4 h-4 text-primary" /> 03300 581 877
+              </a>
+              <a href="https://wa.me/443300581877" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#25D366] hover:text-[#1da851] transition-colors font-medium">
+                <SiWhatsapp className="w-4 h-4" /> WhatsApp us
               </a>
               <a href="mailto:hello@foxitc.co.uk" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Mail className="w-4 h-4 text-primary" /> hello@foxitc.co.uk

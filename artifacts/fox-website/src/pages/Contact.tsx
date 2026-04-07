@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -66,6 +67,9 @@ export default function Contact() {
                   <p className="text-sm font-semibold text-secondary mb-0.5">Call us</p>
                   <a href="tel:03300581877" className="text-muted-foreground hover:text-primary transition-colors" data-testid="contact-phone">
                     03300 581 877
+                  </a>
+                  <a href="https://wa.me/443300581877" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-xs text-[#25D366] hover:text-[#1da851] transition-colors font-medium mt-1">
+                    <SiWhatsapp className="w-3.5 h-3.5" /> Chat on WhatsApp
                   </a>
                 </div>
               </div>

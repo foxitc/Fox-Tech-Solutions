@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Linkedin, Twitter } from "lucide-react";
 import { FoxLogoIcon } from "@/components/FoxLogo";
+import { SiWhatsapp } from "react-icons/si";
 
 const serviceLinks = [
   { title: "Managed IT Support", href: "/services/managed-it" },
@@ -82,9 +83,14 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <a href="tel:03300581877" className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors">
-                  03300 581 877
-                </a>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <a href="tel:03300581877" className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors">
+                    03300 581 877
+                  </a>
+                  <a href="https://wa.me/443300581877" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="flex items-center gap-1 text-xs text-[#25D366] hover:text-[#1da851] transition-colors font-medium">
+                    <SiWhatsapp className="w-3.5 h-3.5" /> WhatsApp
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
