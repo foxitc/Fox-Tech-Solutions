@@ -28,6 +28,9 @@ export default function Footer() {
             <p className="text-sm text-secondary-foreground/70 leading-relaxed mb-6">
               IT support that feels like talking to a mate, not a call centre. We're a small, expert team — and we actually care.
             </p>
+            <p className="text-xs text-secondary-foreground/50 italic leading-relaxed mb-5">
+              "Do It. Care 4 It. Own Shit. Simplify It."
+            </p>
             <div className="flex items-center gap-3">
               <a href="#" aria-label="LinkedIn" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
                 <Linkedin className="w-4 h-4 text-white" />
