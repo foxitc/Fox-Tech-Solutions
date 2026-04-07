@@ -420,14 +420,14 @@ export default function AI() {
               The AI Readiness Audit is designed for businesses who want to take AI seriously without wasting money on the wrong things. Two weeks, a clear report, and a roadmap you can actually act on.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/ai-readiness">
                 <Button size="lg" className="font-bold px-10 group" data-testid="ai-cta">
-                  Book an AI Readiness Audit <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  Take the free AI Readiness Quiz <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link href="/contact">
                 <Button size="lg" variant="outline" className="font-bold px-10 border-white/20 text-white hover:bg-white/10 hover:text-white">
-                  Have a different question
+                  Speak to the team
                 </Button>
               </Link>
             </div>

@@ -10,7 +10,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Menu, X, Shield, Server, Wifi, Phone, Activity, Brain } from "lucide-react";
+import { Menu, X, Shield, Server, Wifi, Phone, Activity, Brain, ClipboardList } from "lucide-react";
 
 const services = [
   {
@@ -60,6 +60,13 @@ const services = [
     href: "/services/pat-testing",
     description: "Keep your team safe and your compliance sorted.",
     icon: <Activity className="w-5 h-5 text-primary" />
+  },
+  {
+    title: "AI Readiness Quiz",
+    href: "/ai-readiness",
+    description: "20 questions. Find out where your business stands — and what to do next.",
+    icon: <ClipboardList className="w-5 h-5 text-primary" />,
+    highlight: true,
   }
 ];
 
@@ -95,12 +102,13 @@ export default function Navbar() {
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                     {services.map((service) => (
-                      <li key={service.title}>
+                      <li key={service.title} className={(service as any).highlight ? "md:col-span-2" : ""}>
                         <NavigationMenuLink asChild>
-                          <Link href={service.href} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <Link href={service.href} className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors ${(service as any).highlight ? "bg-primary/5 border border-primary/20 hover:bg-primary/10" : "hover:bg-accent hover:text-accent-foreground"} focus:bg-accent focus:text-accent-foreground`}>
                             <div className="flex items-center gap-2 text-sm font-semibold text-secondary">
                               {service.icon}
                               {service.title}
+                              {(service as any).highlight && <span className="ml-auto text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Free</span>}
                             </div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
                               {service.description}
@@ -158,6 +166,9 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
+          <Link href="/ai-readiness" className="px-4 py-2 font-semibold text-primary rounded-md hover:bg-primary/10 flex items-center gap-2">
+            <ClipboardList className="w-4 h-4" /> AI Readiness Quiz <span className="text-xs bg-primary text-white px-1.5 py-0.5 rounded-full font-semibold">Free</span>
+          </Link>
           <Link href="/pricing" className="px-4 py-2 font-semibold text-secondary rounded-md hover:bg-accent">Pricing</Link>
           <Link href="/resources" className="px-4 py-2 font-semibold text-secondary rounded-md hover:bg-accent">Free Resources</Link>
           <Link href="/about" className="px-4 py-2 font-semibold text-secondary rounded-md hover:bg-accent">About</Link>
