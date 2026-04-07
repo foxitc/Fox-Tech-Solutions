@@ -986,8 +986,8 @@ export default function AIReadiness() {
               <a href="tel:01234567890" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Phone className="w-4 h-4 text-primary" /> 01234 567890
               </a>
-              <a href="mailto:hello@fox-it.co.uk" className="flex items-center gap-2 hover:text-primary transition-colors">
-                <Mail className="w-4 h-4 text-primary" /> hello@fox-it.co.uk
+              <a href="mailto:hello@foxitc.co.uk" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <Mail className="w-4 h-4 text-primary" /> hello@foxitc.co.uk
               </a>
             </div>
           </div>

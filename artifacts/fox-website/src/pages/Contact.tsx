@@ -77,8 +77,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-secondary mb-0.5">Email us</p>
-                  <a href="mailto:hello@fox-it.co.uk" className="text-muted-foreground hover:text-primary transition-colors" data-testid="contact-email">
-                    hello@fox-it.co.uk
+                  <a href="mailto:hello@foxitc.co.uk" className="text-muted-foreground hover:text-primary transition-colors" data-testid="contact-email">
+                    hello@foxitc.co.uk
                   </a>
                   {/* TODO: Replace with real email */}
                 </div>
