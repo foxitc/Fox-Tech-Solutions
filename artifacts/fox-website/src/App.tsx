@@ -14,6 +14,7 @@ import Mobile from "@/pages/services/Mobile";
 import Microsoft365 from "@/pages/services/Microsoft365";
 import Wifi from "@/pages/services/Wifi";
 import PatTesting from "@/pages/services/PatTesting";
+import AI from "@/pages/services/AI";
 import Pricing from "@/pages/Pricing";
 import Resources from "@/pages/Resources";
 import Navbar from "@/components/Navbar";
@@ -37,6 +38,7 @@ function Router() {
           <Route path="/services/microsoft-365" component={Microsoft365} />
           <Route path="/services/wifi" component={Wifi} />
           <Route path="/services/pat-testing" component={PatTesting} />
+          <Route path="/services/ai" component={AI} />
           <Route path="/pricing" component={Pricing} />
           <Route path="/resources" component={Resources} />
           <Route component={NotFound} />

@@ -4,9 +4,10 @@ import { Phone, Mail, MapPin, Linkedin, Twitter } from "lucide-react";
 const serviceLinks = [
   { title: "Managed IT Support", href: "/services/managed-it" },
   { title: "Cyber Security", href: "/services/cyber-security" },
+  { title: "AI Services", href: "/services/ai" },
+  { title: "Microsoft 365", href: "/services/microsoft-365" },
   { title: "Connectivity", href: "/services/connectivity" },
   { title: "Mobile", href: "/services/mobile" },
-  { title: "Microsoft 365", href: "/services/microsoft-365" },
   { title: "WiFi", href: "/services/wifi" },
   { title: "PAT Testing", href: "/services/pat-testing" },
 ];

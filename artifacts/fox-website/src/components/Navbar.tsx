@@ -10,7 +10,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Menu, X, Shield, Server, Wifi, Phone, Activity } from "lucide-react";
+import { Menu, X, Shield, Server, Wifi, Phone, Activity, Brain } from "lucide-react";
 
 const services = [
   {
@@ -26,6 +26,18 @@ const services = [
     icon: <Shield className="w-5 h-5 text-primary" />
   },
   {
+    title: "AI Services",
+    href: "/services/ai",
+    description: "AI readiness, Copilot, automation & small app builds.",
+    icon: <Brain className="w-5 h-5 text-primary" />
+  },
+  {
+    title: "Microsoft 365",
+    href: "/services/microsoft-365",
+    description: "Licencing, compliance, SharePoint, Teams — handled.",
+    icon: <Server className="w-5 h-5 text-primary" />
+  },
+  {
     title: "Connectivity",
     href: "/services/connectivity",
     description: "Fast, reliable connectivity — leased lines and broadband.",
@@ -38,15 +50,9 @@ const services = [
     icon: <Phone className="w-5 h-5 text-primary" />
   },
   {
-    title: "Microsoft 365",
-    href: "/services/microsoft-365",
-    description: "Licencing, compliance, SharePoint, Teams — handled.",
-    icon: <Server className="w-5 h-5 text-primary" />
-  },
-  {
     title: "WiFi",
     href: "/services/wifi",
-    description: "Qualified Unifi specialists. No dead zones.",
+    description: "Enterprise-grade WiFi — surveyed, designed, installed.",
     icon: <Wifi className="w-5 h-5 text-primary" />
   },
   {
