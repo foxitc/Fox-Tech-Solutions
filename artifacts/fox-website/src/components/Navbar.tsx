@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "wouter";
+import { FoxLogoIcon } from "@/components/FoxLogo";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -82,9 +83,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-primary-foreground font-display font-bold text-xl tracking-tight">F</span>
-          </div>
+          <FoxLogoIcon className="h-12 w-auto" />
           <span className="font-display font-bold text-2xl tracking-tight text-secondary">Fox ITC</span>
         </Link>
 

@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Linkedin, Twitter } from "lucide-react";
+import { FoxLogoIcon } from "@/components/FoxLogo";
 
 const serviceLinks = [
   { title: "Managed IT Support", href: "/services/managed-it" },
@@ -20,9 +21,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                <span className="text-white font-display font-bold text-xl">F</span>
-              </div>
+              <FoxLogoIcon className="h-12 w-auto" />
               <span className="font-display font-bold text-2xl text-white">Fox ITC</span>
             </div>
             <p className="text-sm text-secondary-foreground/70 leading-relaxed mb-6">
