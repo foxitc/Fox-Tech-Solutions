@@ -31,45 +31,64 @@ const tiers = [
     name: "Foundation",
     tagline: "IT support, done properly.",
     description:
-      "Everything you need to keep your business running smoothly. Reliable helpdesk, monitoring, and maintenance — no surprises.",
-    monthlyPrice: 45,
-    annualPrice: 38,
+      "Reliable helpdesk, proactive monitoring and patch management. The essentials, done right — with a team you can actually talk to.",
+    monthlyPrice: 30,
+    annualPrice: 27,
     colour: "border-border",
     headerBg: "bg-muted/40",
     icon: <Zap className="w-6 h-6 text-primary" />,
     highlight: false,
-    cta: "Get started",
+    cta: "Get a quote",
     badge: null,
-    idealFor: "5–20 users",
+    idealFor: "5–15 users",
     support: "Mon–Fri, 8am–6pm",
     responseTime: "4 hours (critical)",
+    features: [
+      "Unlimited remote helpdesk",
+      "24/7 remote monitoring",
+      "Windows patch management",
+      "Microsoft 365 user management",
+      "Antivirus & anti-malware",
+    ],
   },
   {
     id: "professional",
     name: "Professional",
-    tagline: "Security and support, complete.",
+    tagline: "Support and security. One price. No gaps.",
     description:
-      "Full managed IT plus the security tools growing businesses actually need. Our most popular plan — and for good reason.",
-    monthlyPrice: 69,
-    annualPrice: 59,
+      "Everything in Foundation, plus the full security stack most businesses genuinely need — EDR, email protection, dark web monitoring, cloud backup and more. This is where the real value is.",
+    monthlyPrice: 50,
+    annualPrice: 45,
     colour: "border-primary",
     headerBg: "bg-secondary",
     icon: <Shield className="w-6 h-6 text-primary" />,
     highlight: true,
-    cta: "Most popular",
-    badge: "Best value",
-    idealFor: "10–100 users",
+    cta: "Get started",
+    badge: "Most popular",
+    idealFor: "5–100 users",
     support: "Mon–Fri, 7am–8pm",
     responseTime: "2 hours (critical)",
+    features: [
+      "Everything in Foundation",
+      "Endpoint Detection & Response (EDR)",
+      "Email security & anti-spam",
+      "DNS filtering",
+      "Dark web monitoring",
+      "Microsoft 365 cloud backup",
+      "Full M365 admin (Teams, SharePoint)",
+      "Third-party app patching",
+      "Asset & inventory tracking",
+      "Quarterly account reviews",
+    ],
   },
   {
     id: "complete",
     name: "Complete",
     tagline: "Your full IT department.",
     description:
-      "Everything in Professional, plus 24/7 cover, advanced threat protection, and a dedicated account manager who actually knows your business.",
-    monthlyPrice: 99,
-    annualPrice: 85,
+      "Everything in Professional, plus 24/7 cover, advanced threat protection and a dedicated account manager who genuinely knows your business.",
+    monthlyPrice: 75,
+    annualPrice: 67,
     colour: "border-border",
     headerBg: "bg-muted/40",
     icon: <Star className="w-6 h-6 text-primary" />,
@@ -79,6 +98,17 @@ const tiers = [
     idealFor: "25+ users",
     support: "24/7/365",
     responseTime: "1 hour (critical)",
+    features: [
+      "Everything in Professional",
+      "24/7/365 helpdesk cover",
+      "Managed Detection & Response (SOC)",
+      "Simulated phishing campaigns",
+      "Cyber awareness training",
+      "Disaster recovery planning",
+      "Named account manager (monthly)",
+      "vCIO / IT strategy sessions",
+      "Cyber Essentials full support",
+    ],
   },
 ];
 
@@ -136,7 +166,7 @@ const featureRows: FeatureRow[] = [
 const faqs = [
   {
     q: "Are these prices per user or per month?",
-    a: "Per user, per month, excluding VAT. So a 20-person business on Professional would be 20 × £69 = £1,380/month (or £1,180/month on the annual plan). We'll give you a tailored quote once we understand your setup.",
+    a: "Per user, per month, excluding VAT. So a 10-person business on Professional would be 10 × £50 = £500/month (or £450/month on the annual plan). We'll give you a tailored quote once we understand your setup.",
   },
   {
     q: "Is there a minimum number of users?",
@@ -213,7 +243,7 @@ export default function Pricing() {
                 Annual
               </span>
               {annual && (
-                <Badge className="bg-primary text-white text-xs border-0 ml-1">Save up to 15%</Badge>
+                <Badge className="bg-primary text-white text-xs border-0 ml-1">Save up to 10%</Badge>
               )}
             </div>
           </motion.div>
@@ -268,33 +298,47 @@ export default function Pricing() {
                 </div>
 
                 {/* Body */}
-                <div className="p-7 flex flex-col flex-grow">
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                <div className={`p-7 flex flex-col flex-grow ${tier.highlight ? "bg-secondary" : ""}`}>
+                  <p className={`text-sm leading-relaxed mb-5 ${tier.highlight ? "text-white/70" : "text-muted-foreground"}`}>
                     {tier.description}
                   </p>
 
-                  <ul className="space-y-2.5 mb-8 flex-grow">
-                    {[
-                      { label: "Ideal for", value: tier.idealFor },
-                      { label: "Support hours", value: tier.support },
-                      { label: "Critical response", value: tier.responseTime },
-                    ].map((item) => (
-                      <li key={item.label} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-foreground">
-                          <span className="font-medium">{item.label}:</span> {item.value}
-                        </span>
+                  {/* Support summary pills */}
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {[tier.support, tier.responseTime].map((val) => (
+                      <span key={val} className={`text-xs font-medium px-2.5 py-1 rounded-full ${tier.highlight ? "bg-white/10 text-white/80" : "bg-muted text-muted-foreground"}`}>
+                        {val}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Feature list */}
+                  <ul className="space-y-2 mb-6 flex-grow">
+                    {tier.features.map((feat) => (
+                      <li key={feat} className="flex items-start gap-2.5">
+                        <CheckCircle2 className={`w-4 h-4 mt-0.5 flex-shrink-0 ${tier.highlight ? "text-primary" : "text-primary/70"}`} />
+                        <span className={`text-sm ${tier.highlight ? "text-white/90" : "text-foreground"}`}>{feat}</span>
                       </li>
                     ))}
                   </ul>
 
+                  {/* Professional value callout */}
+                  {tier.highlight && (
+                    <div className="bg-primary/15 border border-primary/30 rounded-xl px-4 py-3 mb-5">
+                      <p className="text-xs text-white/80 leading-relaxed">
+                        <span className="font-bold text-primary">Worth noting:</span> EDR, email security and cloud backup alone would cost £25–£40/user/month if purchased separately. You're getting all of that plus full IT support in one price.
+                      </p>
+                    </div>
+                  )}
+
                   <Link href="/contact">
                     <Button
-                      className={`w-full font-semibold group ${tier.highlight ? "" : "variant-outline"}`}
+                      className={`w-full font-semibold group ${tier.highlight ? "" : ""}`}
                       variant={tier.highlight ? "default" : "outline"}
+                      size="lg"
                       data-testid={`pricing-cta-${tier.id}`}
                     >
-                      {tier.highlight ? tier.cta : "Get a quote"}
+                      {tier.cta}
                       <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
@@ -567,7 +611,7 @@ export default function Pricing() {
               {[
                 { label: "Average downtime cost", value: "£1,600", sub: "4hr outage, 10 staff" },
                 { label: "Break-fix call-out rate", value: "£150/hr", sub: "UK average" },
-                { label: "Fox Professional plan", value: "£69", sub: "per user per month" },
+                { label: "Fox Professional plan", value: "£50", sub: "per user per month" },
                 { label: "Client retention rate", value: "98%", sub: "because it works" },
               ].map((stat) => (
                 <div key={stat.label} className="bg-muted/50 rounded-2xl p-5 border border-border">
