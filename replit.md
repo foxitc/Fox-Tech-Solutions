@@ -10,6 +10,7 @@ Complete marketing website for Fox IT — a UK managed IT services provider. Bui
   - `src/pages/Home.tsx` — Homepage: hero, services overview, stats, team, CTA
   - `src/pages/About.tsx` — About Us with team bios and values
   - `src/pages/Contact.tsx` — Contact page with Odoo iframe embed
+  - `src/pages/Resources.tsx` — Free Resources hub: interactive IT health check quiz, 6 free guide cards, testimonials, partner logos, ROI stats
   - `src/pages/services/ManagedIT.tsx` — Managed IT Support
   - `src/pages/services/CyberSecurity.tsx` — Cyber Security (Essentials, Hornet, Training, Phishing)
   - `src/pages/services/Connectivity.tsx` — Broadband & Leased Line

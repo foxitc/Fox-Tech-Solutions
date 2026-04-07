@@ -15,6 +15,8 @@ import {
   Clock,
   HeartHandshake,
   Monitor,
+  Quote,
+  Download,
 } from "lucide-react";
 
 const services = [
@@ -381,6 +383,94 @@ export default function Home() {
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 bg-muted/40">
+        <div className="container mx-auto px-4 md:px-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-10"
+          >
+            <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Client stories</p>
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-secondary">Don't take our word for it.</h2>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { name: "Rebecca T.", role: "Operations Manager, Creative agency", quote: "Fox IT have become an extension of our office. Response times are next level — issues sorted before they become problems.", stars: 5 },
+              { name: "James W.", role: "Managing Director, Professional services", quote: "We moved from a larger IT company and the difference is night and day. We speak to the same people every time. No call centres, no ticket queues.", stars: 5 },
+              { name: "Sarah M.", role: "Practice Manager, Healthcare", quote: "Fox sorted our Cyber Essentials in weeks. Todd walked us through everything in plain English. We finally feel like our data is protected properly.", stars: 5 },
+            ].map((t, i) => (
+              <motion.div
+                key={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                className="bg-background rounded-2xl border border-border p-7 flex flex-col"
+              >
+                <Quote className="w-7 h-7 text-primary/20 mb-4" />
+                <p className="text-foreground text-sm leading-relaxed flex-grow mb-5 italic">"{t.quote}"</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center font-display font-bold text-primary text-sm flex-shrink-0">
+                    {t.name[0]}
+                  </div>
+                  <div>
+                    <div className="flex mb-0.5">
+                      {Array.from({ length: t.stars }).map((_, j) => <Star key={j} className="w-3 h-3 text-primary fill-primary" />)}
+                    </div>
+                    <p className="font-semibold text-secondary text-sm">{t.name}</p>
+                    <p className="text-xs text-muted-foreground">{t.role}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Free Resources teaser */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+            className="bg-secondary rounded-3xl p-10 md:p-14 relative overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsl(25_95%_53%_/_0.15)_0%,_transparent_60%)]" />
+            <div className="relative flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="max-w-xl">
+                <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Free tools & guides</p>
+                <h2 className="font-display font-bold text-3xl text-white mb-4">Not ready to call yet? Start here.</h2>
+                <p className="text-white/70 leading-relaxed">
+                  Take our free IT health check, download our SMB guides or check your cyber security score — no email required, no hard sell. Just useful stuff.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 flex-shrink-0">
+                <Link href="/resources#health-check">
+                  <Button size="lg" className="w-full font-bold group">
+                    Free IT health check
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                <Link href="/resources#guides">
+                  <Button size="lg" variant="outline" className="w-full font-bold border-white/20 text-white hover:bg-white/10 hover:text-white group">
+                    <Download className="mr-2 w-4 h-4" />
+                    Browse free guides
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>

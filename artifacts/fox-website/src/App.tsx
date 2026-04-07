@@ -15,6 +15,7 @@ import Microsoft365 from "@/pages/services/Microsoft365";
 import Wifi from "@/pages/services/Wifi";
 import PatTesting from "@/pages/services/PatTesting";
 import Pricing from "@/pages/Pricing";
+import Resources from "@/pages/Resources";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -37,6 +38,7 @@ function Router() {
           <Route path="/services/wifi" component={Wifi} />
           <Route path="/services/pat-testing" component={PatTesting} />
           <Route path="/pricing" component={Pricing} />
+          <Route path="/resources" component={Resources} />
           <Route component={NotFound} />
         </Switch>
       </main>
