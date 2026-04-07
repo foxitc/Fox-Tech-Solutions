@@ -386,21 +386,32 @@ export default function Pricing() {
               <div className="mb-8">
                 <div className="flex items-center justify-between mb-3">
                   <label className="text-sm font-semibold text-secondary">Number of users</label>
-                  <span className="font-display font-bold text-2xl text-primary">{users}</span>
+                  <input
+                    type="number"
+                    min={1}
+                    max={500}
+                    value={users}
+                    onChange={(e) => {
+                      const val = parseInt(e.target.value, 10);
+                      if (!isNaN(val) && val >= 1) setUsers(Math.min(val, 500));
+                    }}
+                    className="font-display font-bold text-2xl text-primary w-20 text-right bg-transparent border-b-2 border-primary/40 focus:border-primary focus:outline-none"
+                    data-testid="user-count-input"
+                  />
                 </div>
                 <input
                   type="range"
-                  min={5}
+                  min={1}
                   max={100}
-                  step={5}
-                  value={users}
+                  step={1}
+                  value={Math.min(users, 100)}
                   onChange={(e) => setUsers(Number(e.target.value))}
                   className="w-full accent-primary h-2 cursor-pointer"
                   data-testid="user-count-slider"
                 />
                 <div className="flex justify-between text-xs text-muted-foreground mt-1">
-                  <span>5</span>
-                  <span>100+</span>
+                  <span>1</span>
+                  <span>100+ — type above for larger teams</span>
                 </div>
               </div>
 
