@@ -193,7 +193,7 @@ export default function Mobile() {
             <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">What we provide</p>
             <h2 className="font-display font-bold text-3xl md:text-4xl text-secondary mb-4">More than just SIMs</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Managing mobile through Fox IT means proper management — not just handing out SIMs. MDM, usage monitoring, security, porting, and reporting all included.
+              Managing mobile through Fox ITC means proper management — not just handing out SIMs. MDM, usage monitoring, security, porting, and reporting all included.
             </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

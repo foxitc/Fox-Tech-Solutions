@@ -633,7 +633,7 @@ function AuditForm({ prefillScore }: { prefillScore?: number }) {
           </Link>
           <Link href="/contact">
             <Button className="gap-2">
-              Contact Fox IT <ArrowRight className="w-4 h-4" />
+              Contact Fox ITC <ArrowRight className="w-4 h-4" />
             </Button>
           </Link>
         </div>

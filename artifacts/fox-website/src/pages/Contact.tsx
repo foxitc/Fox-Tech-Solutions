@@ -129,7 +129,7 @@ export default function Contact() {
                 */}
                 <iframe
                   src="https://odoo.example.com/contactus"
-                  title="Contact Fox IT"
+                  title="Contact Fox ITC"
                   className="w-full"
                   style={{ height: "640px", border: "none" }}
                   data-testid="odoo-contact-iframe"

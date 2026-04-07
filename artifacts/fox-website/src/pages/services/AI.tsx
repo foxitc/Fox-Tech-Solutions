@@ -82,7 +82,7 @@ const aiServices = [
         ],
       },
       {
-        heading: "What Fox IT includes",
+        heading: "What Fox ITC includes",
         points: [
           "Licence procurement and activation (via CSP)",
           "Data governance review — prevent Copilot surfacing things it shouldn't",
@@ -151,7 +151,7 @@ const aiServices = [
           "Low-code where possible (faster, cheaper, more maintainable)",
           "You own the code and the platform — no vendor lock-in to us",
           "Handover training so your team can maintain and extend it",
-          "Ongoing support available as part of your Fox IT package",
+          "Ongoing support available as part of your Fox ITC package",
         ],
       },
     ],
@@ -330,7 +330,7 @@ export default function AI() {
         <div className="container mx-auto px-4 md:px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ duration: 0.6 }} className="max-w-3xl mb-14">
             <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">What we offer</p>
-            <h2 className="font-display font-bold text-3xl md:text-4xl text-secondary mb-5">Six ways Fox IT delivers AI value</h2>
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-secondary mb-5">Six ways Fox ITC delivers AI value</h2>
             <p className="text-muted-foreground leading-relaxed">
               We work with businesses at every stage — from "we haven't started yet" through to "we need something built." Click any service to expand the full detail.
             </p>

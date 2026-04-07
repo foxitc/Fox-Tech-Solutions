@@ -68,7 +68,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* Fox IT — Deep Navy + Electric Orange palette */
+/* Fox ITC — Deep Navy + Electric Orange palette */
 :root {
   --button-outline: rgba(0,0,0, .10);
   --badge-outline: rgba(0,0,0, .05);

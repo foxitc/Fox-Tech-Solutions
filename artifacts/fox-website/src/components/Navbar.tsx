@@ -85,7 +85,7 @@ export default function Navbar() {
           <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
             <span className="text-primary-foreground font-display font-bold text-xl tracking-tight">F</span>
           </div>
-          <span className="font-display font-bold text-2xl tracking-tight text-secondary">Fox IT</span>
+          <span className="font-display font-bold text-2xl tracking-tight text-secondary">Fox ITC</span>
         </Link>
 
         {/* Desktop Nav */}

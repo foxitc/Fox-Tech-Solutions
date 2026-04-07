@@ -288,7 +288,7 @@ export default function CyberSecurity() {
             <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Plan comparison</p>
             <h2 className="font-display font-bold text-2xl md:text-3xl text-secondary mb-2">Hornetsecurity 365 Total Protection — tiers</h2>
             <p className="text-muted-foreground text-sm mb-8 max-w-2xl">
-              Every Fox IT client gets Hornetsecurity included in their package. The tier depends on your requirements. Pricing available on request — we supply via our partner network and typically beat direct pricing.
+              Every Fox ITC client gets Hornetsecurity included in their package. The tier depends on your requirements. Pricing available on request — we supply via our partner network and typically beat direct pricing.
             </p>
           </motion.div>
 

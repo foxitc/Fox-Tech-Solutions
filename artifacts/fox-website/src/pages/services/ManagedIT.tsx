@@ -67,7 +67,7 @@ const services = [
   {
     icon: <Cloud className="w-6 h-6 text-primary" />,
     title: "Microsoft 365 Management",
-    desc: "M365 management is included in all Fox IT packages. Licencing, user onboarding/offboarding, security hardening, Teams configuration, SharePoint structure, MFA enforcement — we handle the whole platform, not just the helpdesk tickets.",
+    desc: "M365 management is included in all Fox ITC packages. Licencing, user onboarding/offboarding, security hardening, Teams configuration, SharePoint structure, MFA enforcement — we handle the whole platform, not just the helpdesk tickets.",
     points: ["User lifecycle management", "MFA & conditional access enforcement", "Licence management & cost optimisation", "Teams and SharePoint configuration"],
   },
   {
@@ -94,7 +94,7 @@ const process = [
   { step: "01", title: "Discovery call", desc: "We learn about your business, your setup, your team size, and any existing IT pain points. No forms, no sales script — just a straight conversation." },
   { step: "02", title: "Audit & proposal", desc: "We audit what you've got and put together a clear proposal — what we'll do, what's included, what it costs. Plain English, no surprises." },
   { step: "03", title: "Onboarding", desc: "We deploy our monitoring, get familiar with your systems, document everything, and ensure a clean handover from any previous provider." },
-  { step: "04", title: "Ongoing support", desc: "From day one you have a direct line to your Fox IT team. Monthly reports, quarterly reviews, and a team that grows to know your business inside out." },
+  { step: "04", title: "Ongoing support", desc: "From day one you have a direct line to your Fox ITC team. Monthly reports, quarterly reviews, and a team that grows to know your business inside out." },
 ];
 
 export default function ManagedIT() {
@@ -132,7 +132,7 @@ export default function ManagedIT() {
             <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">What's included</p>
             <h2 className="font-display font-bold text-3xl md:text-4xl text-secondary mb-5">Everything you need — nothing you don't</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Fox IT Managed IT is a fixed monthly service that covers every aspect of your IT. No per-ticket charges, no out-of-scope surprises. All included.
+              Fox ITC Managed IT is a fixed monthly service that covers every aspect of your IT. No per-ticket charges, no out-of-scope surprises. All included.
             </p>
           </motion.div>
 

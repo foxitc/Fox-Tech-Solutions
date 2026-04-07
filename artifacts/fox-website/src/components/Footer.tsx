@@ -23,7 +23,7 @@ export default function Footer() {
               <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                 <span className="text-white font-display font-bold text-xl">F</span>
               </div>
-              <span className="font-display font-bold text-2xl text-white">Fox IT</span>
+              <span className="font-display font-bold text-2xl text-white">Fox ITC</span>
             </div>
             <p className="text-sm text-secondary-foreground/70 leading-relaxed mb-6">
               IT support that feels like talking to a mate, not a call centre. We're a small, expert team — and we actually care.
@@ -105,7 +105,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-secondary-foreground/50">
-            &copy; {new Date().getFullYear()} Fox IT. All rights reserved.
+            &copy; {new Date().getFullYear()} Fox ITC. All rights reserved.
           </p>
           <p className="text-xs text-secondary-foreground/50">
             IT that just works. People who actually care.

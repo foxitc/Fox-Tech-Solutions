@@ -300,7 +300,7 @@ export default function Microsoft365() {
             <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Which plan?</p>
             <h2 className="font-display font-bold text-3xl md:text-4xl text-secondary mb-4">Microsoft 365 plan comparison</h2>
             <p className="text-muted-foreground max-w-2xl mb-2">
-              Prices shown are indicative annual commitment rates, excluding VAT, per user per month. Fox IT supplies Microsoft 365 licences via CSP (Giacom) — often with better pricing than buying direct.
+              Prices shown are indicative annual commitment rates, excluding VAT, per user per month. Fox ITC supplies Microsoft 365 licences via CSP (Giacom) — often with better pricing than buying direct.
             </p>
             <p className="text-xs text-muted-foreground">
               * E3 and E5 do not include Teams as a bundled product in the UK (Microsoft regional unbundling). Teams is available as a separate add-on. Prices correct as of 2025 — contact us for a formal quote.
@@ -357,7 +357,7 @@ export default function Microsoft365() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ duration: 0.6 }}>
-              <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Fox IT + Microsoft 365</p>
+              <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Fox ITC + Microsoft 365</p>
               <h2 className="font-display font-bold text-3xl md:text-4xl text-secondary mb-6">The hidden cost of getting M365 wrong</h2>
               <p className="text-muted-foreground leading-relaxed mb-5">
                 Microsoft 365 is deceptively complex. It's easy to spin up — which means it's equally easy to spin up with the wrong licences, weak security settings, and a permission structure nobody understands six months later.
@@ -384,7 +384,7 @@ export default function Microsoft365() {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.2, duration: 0.5 }}>
               <div className="bg-secondary rounded-2xl p-8 text-white">
                 <Settings className="w-10 h-10 text-primary mb-4" />
-                <h3 className="font-display font-bold text-xl mb-3">Microsoft 365 via Fox IT</h3>
+                <h3 className="font-display font-bold text-xl mb-3">Microsoft 365 via Fox ITC</h3>
                 <p className="text-white/70 leading-relaxed mb-5">
                   We're a Microsoft CSP partner — supplying licences directly, at competitive pricing, with full management included. One invoice. One team. No Microsoft support queues.
                 </p>

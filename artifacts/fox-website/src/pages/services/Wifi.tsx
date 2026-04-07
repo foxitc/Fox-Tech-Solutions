@@ -74,7 +74,7 @@ const processSteps = [
     icon: <Monitor className="w-7 h-7 text-primary" />,
     step: "04",
     title: "Ongoing Management",
-    desc: "For Fox IT Managed IT clients, WiFi monitoring is included — we're alerted if an access point goes offline, can reboot it remotely, push firmware updates, and see performance trends. For standalone WiFi clients, managed WiFi is available as an add-on.",
+    desc: "For Fox ITC Managed IT clients, WiFi monitoring is included — we're alerted if an access point goes offline, can reboot it remotely, push firmware updates, and see performance trends. For standalone WiFi clients, managed WiFi is available as an add-on.",
     points: [
       "AP uptime monitoring — we know before you do",
       "Remote configuration changes",
@@ -260,7 +260,7 @@ export default function Wifi() {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(25_95%_53%_/_0.15)_0%,_transparent_60%)]" />
             <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div>
-                <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Why Fox IT</p>
+                <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Why Fox ITC</p>
                 <h2 className="font-display font-bold text-3xl text-white mb-5">WiFi is only as good as the people who design it</h2>
                 <p className="text-white/70 leading-relaxed mb-4">
                   We're experienced wireless networking engineers — not generalist IT providers who do WiFi on the side. Every installation is designed from a proper site survey, using the right hardware for the environment.

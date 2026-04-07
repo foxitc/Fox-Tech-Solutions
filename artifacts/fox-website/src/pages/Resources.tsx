@@ -413,7 +413,7 @@ const testimonials = [
     role: "Operations Manager",
     company: "Creative agency, Nottingham",
     stars: 5,
-    quote: "Would highly recommend Fox IT. They've become an extension of our office and we're so well looked after. Response times are next level — issues are sorted before they become problems.",
+    quote: "Would highly recommend Fox ITC. They've become an extension of our office and we're so well looked after. Response times are next level — issues are sorted before they become problems.",
   },
   {
     name: "James W.",
@@ -742,7 +742,7 @@ export default function Resources() {
           </div>
 
           <p className="text-center text-xs text-muted-foreground mt-8">
-            Fox IT is a certified Cyber Essentials provider. Microsoft licencing supplied via CSP. All vendor relationships maintained to certified/partner level.
+            Fox ITC is a certified Cyber Essentials provider. Microsoft licencing supplied via CSP. All vendor relationships maintained to certified/partner level.
           </p>
         </div>
       </section>

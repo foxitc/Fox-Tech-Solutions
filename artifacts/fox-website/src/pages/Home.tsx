@@ -403,7 +403,7 @@ export default function Home() {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { name: "Rebecca T.", role: "Operations Manager, Creative agency", quote: "Fox IT have become an extension of our office. Response times are next level — issues sorted before they become problems.", stars: 5 },
+              { name: "Rebecca T.", role: "Operations Manager, Creative agency", quote: "Fox ITC have become an extension of our office. Response times are next level — issues sorted before they become problems.", stars: 5 },
               { name: "James W.", role: "Managing Director, Professional services", quote: "We moved from a larger IT company and the difference is night and day. We speak to the same people every time. No call centres, no ticket queues.", stars: 5 },
               { name: "Sarah M.", role: "Practice Manager, Healthcare", quote: "Fox sorted our Cyber Essentials in weeks. Todd walked us through everything in plain English. We finally feel like our data is protected properly.", stars: 5 },
             ].map((t, i) => (
