@@ -438,7 +438,7 @@ export default function Pricing() {
               </div>
 
               <p className="text-xs text-muted-foreground text-center mt-4">
-                Estimates ex. VAT. Volume discounts apply at 20+ users. M365 licences not included.
+                Minimum 5 users. Estimates ex. VAT. Volume discounts apply at 20+ users. M365 licences not included.
               </p>
             </div>
           </motion.div>
