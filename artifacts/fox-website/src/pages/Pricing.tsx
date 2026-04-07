@@ -388,12 +388,12 @@ export default function Pricing() {
                   <label className="text-sm font-semibold text-secondary">Number of users</label>
                   <input
                     type="number"
-                    min={1}
+                    min={5}
                     max={500}
                     value={users}
                     onChange={(e) => {
                       const val = parseInt(e.target.value, 10);
-                      if (!isNaN(val) && val >= 1) setUsers(Math.min(val, 500));
+                      if (!isNaN(val) && val >= 5) setUsers(Math.min(val, 500));
                     }}
                     className="font-display font-bold text-2xl text-primary w-20 text-right bg-transparent border-b-2 border-primary/40 focus:border-primary focus:outline-none"
                     data-testid="user-count-input"
@@ -401,7 +401,7 @@ export default function Pricing() {
                 </div>
                 <input
                   type="range"
-                  min={1}
+                  min={5}
                   max={100}
                   step={1}
                   value={Math.min(users, 100)}
@@ -410,7 +410,7 @@ export default function Pricing() {
                   data-testid="user-count-slider"
                 />
                 <div className="flex justify-between text-xs text-muted-foreground mt-1">
-                  <span>1</span>
+                  <span>5</span>
                   <span>100+ — type above for larger teams</span>
                 </div>
               </div>
