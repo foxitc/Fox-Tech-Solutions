@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "GXPjjTlFQ6uqGeXaT1dFX"
@@ -60,3 +59,9 @@ id = "NCp6vpBytgALN02M1NCW-"
 uri = "file://artifacts/fox-website/src/assets/images/service-m365.png"
 type = "image"
 title = "Microsoft 365 cloud"
+
+[[outputs]]
+id = "qxwGhSwuFTvJqeY_qOK8u"
+uri = "file://fox-it-website.zip"
+type = "unspecified"
+title = "Fox IT Website — Built Static Files"
