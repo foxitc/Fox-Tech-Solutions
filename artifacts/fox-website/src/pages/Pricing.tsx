@@ -535,18 +535,19 @@ export default function Pricing() {
 
             <div className="bg-background rounded-2xl border border-border overflow-hidden">
               {[
-                { name: "Microsoft 365 Business Basic", price: "From £5/user/mo", note: "Email, Teams, OneDrive" },
-                { name: "Microsoft 365 Business Premium", price: "From £18/user/mo", note: "Full Office apps + advanced security" },
-                { name: "Cyber Essentials certification", price: "From £500 + monthly support", note: "Government-backed certification" },
-                { name: "Simulated phishing campaigns", price: "From £25/user/mo", note: "Test your team before the hackers do" },
-                { name: "Cyber awareness training", price: "From £8/user/mo", note: "Engaging, practical staff training" },
-                { name: "Managed WiFi (Unifi)", price: "From £65/site/mo", note: "Monitoring, management & support" },
-                { name: "Out-of-hours emergency cover", price: "From £15/user/mo", note: "For Foundation & Professional plans" },
-                { name: "Additional on-site visits", price: "From £200/visit", note: "Available for all plans" },
+                { name: "Microsoft 365 Business Basic", price: "From £5.50/user/mo", note: "Email, Teams, OneDrive — managed & supported by Fox" },
+                { name: "Microsoft 365 Business Standard", price: "From £11/user/mo", note: "Includes full Office apps (Word, Excel, PowerPoint)" },
+                { name: "Microsoft 365 Business Premium", price: "From £19/user/mo", note: "Best-in-class security + full Office apps" },
+                { name: "Cyber Essentials (incl. cert fee)", price: "From £695", note: "Preparation, submission & IASME certification — renews annually" },
+                { name: "Simulated phishing campaigns", price: "From £8/user/mo", note: "Ongoing campaigns, reports & staff feedback — tests real-world resilience" },
+                { name: "Cyber awareness training", price: "From £6/user/mo", note: "Bite-sized modules, tracked completion — practical, not preachy" },
+                { name: "Managed WiFi (Unifi)", price: "From £65/site/mo", note: "Monitoring, management & remote support — hardware quoted separately" },
+                { name: "Out-of-hours emergency cover", price: "From £15/user/mo", note: "Uplift for Foundation & Professional — 24/7 emergency response" },
+                { name: "On-site support", price: "From £350/half-day", note: "Any plan — project work, setups & on-site diagnosis" },
               ].map((addon, i) => (
                 <div
                   key={addon.name}
-                  className={`flex flex-col sm:flex-row sm:items-center justify-between p-4 gap-2 ${i < 7 ? "border-b border-border" : ""}`}
+                  className={`flex flex-col sm:flex-row sm:items-center justify-between p-4 gap-2 ${i < 8 ? "border-b border-border" : ""}`}
                 >
                   <div>
                     <p className="font-semibold text-sm text-secondary">{addon.name}</p>
