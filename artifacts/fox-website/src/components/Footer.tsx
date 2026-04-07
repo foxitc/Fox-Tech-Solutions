@@ -66,7 +66,7 @@ export default function Footer() {
                 <Link href="/pricing" className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors">Pricing</Link>
               </li>
               <li>
-                <Link href="/resources" className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors">Free Resources</Link>
+                <Link href="/resources" className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors">Resources</Link>
               </li>
               <li>
                 <Link href="/ai-readiness" className="text-sm text-primary font-semibold hover:text-primary/80 transition-colors">AI Readiness Quiz ↗</Link>

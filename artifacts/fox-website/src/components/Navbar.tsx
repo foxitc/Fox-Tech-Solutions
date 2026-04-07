@@ -127,7 +127,7 @@ export default function Navbar() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link href="/resources">Free Resources</Link>
+                  <Link href="/resources">Resources</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
@@ -170,7 +170,7 @@ export default function Navbar() {
             <ClipboardList className="w-4 h-4" /> AI Readiness Quiz <span className="text-xs bg-primary text-white px-1.5 py-0.5 rounded-full font-semibold">Free</span>
           </Link>
           <Link href="/pricing" className="px-4 py-2 font-semibold text-secondary rounded-md hover:bg-accent">Pricing</Link>
-          <Link href="/resources" className="px-4 py-2 font-semibold text-secondary rounded-md hover:bg-accent">Free Resources</Link>
+          <Link href="/resources" className="px-4 py-2 font-semibold text-secondary rounded-md hover:bg-accent">Resources</Link>
           <Link href="/about" className="px-4 py-2 font-semibold text-secondary rounded-md hover:bg-accent">About</Link>
           <Link href="/contact" className="px-4 py-2 font-semibold text-secondary rounded-md hover:bg-accent">Contact</Link>
           <Link href="/contact" className="mt-4">
