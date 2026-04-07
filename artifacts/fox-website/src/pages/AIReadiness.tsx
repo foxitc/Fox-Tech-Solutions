@@ -983,8 +983,8 @@ export default function AIReadiness() {
             </motion.div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8 text-sm text-muted-foreground">
-              <a href="tel:01234567890" className="flex items-center gap-2 hover:text-primary transition-colors">
-                <Phone className="w-4 h-4 text-primary" /> 01234 567890
+              <a href="tel:03300581877" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <Phone className="w-4 h-4 text-primary" /> 03300 581 877
               </a>
               <a href="mailto:hello@foxitc.co.uk" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Mail className="w-4 h-4 text-primary" /> hello@foxitc.co.uk

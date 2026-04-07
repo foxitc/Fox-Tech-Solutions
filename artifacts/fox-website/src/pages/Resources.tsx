@@ -818,10 +818,10 @@ export default function Resources() {
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <a href="tel:01234567890">
+              <a href="tel:03300581877">
                 <Button size="lg" variant="outline" className="font-bold text-base px-10 group">
                   <Phone className="mr-2 w-4 h-4" />
-                  Call: 01234 567890
+                  Call: 03300 581 877
                 </Button>
               </a>
             </div>

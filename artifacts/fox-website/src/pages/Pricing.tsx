@@ -713,10 +713,10 @@ export default function Pricing() {
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <a href="tel:01234567890">
+              <a href="tel:03300581877">
                 <Button size="lg" variant="outline" className="font-bold text-base px-10 border-white/20 text-white hover:bg-white/10 hover:text-white group">
                   <Phone className="mr-2 w-4 h-4" />
-                  Call us: 01234 567890
+                  Call us: 03300 581 877
                 </Button>
               </a>
             </div>

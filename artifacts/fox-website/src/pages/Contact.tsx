@@ -64,10 +64,9 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-secondary mb-0.5">Call us</p>
-                  <a href="tel:01234567890" className="text-muted-foreground hover:text-primary transition-colors" data-testid="contact-phone">
-                    01234 567890
+                  <a href="tel:03300581877" className="text-muted-foreground hover:text-primary transition-colors" data-testid="contact-phone">
+                    03300 581 877
                   </a>
-                  {/* TODO: Replace with real phone number */}
                 </div>
               </div>
 
@@ -80,7 +79,6 @@ export default function Contact() {
                   <a href="mailto:hello@foxitc.co.uk" className="text-muted-foreground hover:text-primary transition-colors" data-testid="contact-email">
                     hello@foxitc.co.uk
                   </a>
-                  {/* TODO: Replace with real email */}
                 </div>
               </div>
 

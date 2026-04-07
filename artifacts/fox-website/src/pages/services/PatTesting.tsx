@@ -237,9 +237,9 @@ export default function PatTesting() {
                   Request a PAT quote <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <a href="tel:01234567890">
+              <a href="tel:03300581877">
                 <Button variant="outline" className="w-full font-semibold border-white/20 text-white hover:bg-white/10 hover:text-white">
-                  Call: 01234 567890
+                  Call: 03300 581 877
                 </Button>
               </a>
             </div>
