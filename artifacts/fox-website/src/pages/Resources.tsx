@@ -356,6 +356,7 @@ const guides = [
     pages: "8 pages",
     tag: "Cyber Security",
     colour: "bg-blue-50 border-blue-100",
+    file: "/guides/smb-cyber-security-checklist.pdf",
   },
   {
     icon: <FileText className="w-6 h-6 text-primary" />,
@@ -364,6 +365,7 @@ const guides = [
     pages: "4 pages",
     tag: "Buying IT Support",
     colour: "bg-orange-50 border-orange-100",
+    file: "/guides/10-questions-for-it-support.pdf",
   },
   {
     icon: <Lock className="w-6 h-6 text-primary" />,
@@ -372,6 +374,7 @@ const guides = [
     pages: "10 pages",
     tag: "Compliance",
     colour: "bg-purple-50 border-purple-100",
+    file: "/guides/gdpr-it-guide.pdf",
   },
   {
     icon: <AlertTriangle className="w-6 h-6 text-primary" />,
@@ -380,6 +383,7 @@ const guides = [
     pages: "6 pages",
     tag: "Incident Response",
     colour: "bg-red-50 border-red-100",
+    file: "/guides/what-to-do-if-hacked.pdf",
   },
   {
     icon: <BarChart3 className="w-6 h-6 text-primary" />,
@@ -388,6 +392,7 @@ const guides = [
     pages: "5 pages",
     tag: "Microsoft 365",
     colour: "bg-green-50 border-green-100",
+    file: "/guides/choosing-microsoft-365-plan.pdf",
   },
   {
     icon: <BookOpen className="w-6 h-6 text-primary" />,
@@ -396,6 +401,7 @@ const guides = [
     pages: "7 pages",
     tag: "Reference",
     colour: "bg-slate-50 border-slate-100",
+    file: "/guides/it-buyers-glossary.pdf",
   },
 ];
 
@@ -450,22 +456,6 @@ const partners = [
 /* ─── Page ──────────────────────────────────────────────────────── */
 
 export default function Resources() {
-  const [activeGuide, setActiveGuide] = useState<number | null>(null);
-  const [formData, setFormData] = useState({ name: "", email: "" });
-  const [submitted, setSubmitted] = useState<number | null>(null);
-
-  function handleGuideRequest(idx: number) {
-    if (submitted === idx) return;
-    setActiveGuide(idx);
-  }
-
-  function handleFormSubmit(idx: number, e: React.FormEvent) {
-    e.preventDefault();
-    setSubmitted(idx);
-    setActiveGuide(null);
-    setFormData({ name: "", email: "" });
-  }
-
   return (
     <div>
       {/* Hero */}
@@ -644,35 +634,13 @@ export default function Resources() {
 
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-muted-foreground">{guide.pages}</span>
-                  {submitted === i ? (
-                    <span className="flex items-center gap-1.5 text-xs font-semibold text-green-600">
-                      <CheckCircle2 className="w-4 h-4" /> On its way!
-                    </span>
-                  ) : activeGuide === i ? (
-                    <form
-                      onSubmit={(e) => handleFormSubmit(i, e)}
-                      className="flex gap-2 w-full mt-3"
-                    >
-                      <input
-                        type="email"
-                        required
-                        placeholder="Your email"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="flex-1 text-xs border border-border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                      />
-                      <Button type="submit" size="sm" className="text-xs px-3">Send</Button>
-                    </form>
-                  ) : (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="text-primary hover:text-primary hover:bg-primary/10 gap-1.5 text-xs font-semibold"
-                      onClick={() => handleGuideRequest(i)}
-                    >
-                      <Download className="w-3.5 h-3.5" /> Get free guide
-                    </Button>
-                  )}
+                  <a
+                    href={guide.file}
+                    download
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-primary hover:bg-primary/10 rounded-md px-2.5 py-1.5 transition-colors"
+                  >
+                    <Download className="w-3.5 h-3.5" /> Download PDF
+                  </a>
                 </div>
               </motion.div>
             ))}
