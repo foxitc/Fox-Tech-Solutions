@@ -24,6 +24,8 @@ import {
   TrendingUp,
   Target,
   Clock,
+  Loader2,
+  Lock,
 } from "lucide-react";
 
 const fadeInUp = {
@@ -798,22 +800,145 @@ function AuditForm({ prefillScore }: { prefillScore?: number }) {
   );
 }
 
+/* ─── Email Gate ─────────────────────────────────────────────────── */
+
+function scoreTierLabel(score: number): string {
+  const pct = Math.round((score / MAX_SCORE) * 100);
+  if (pct >= 75) return "AI-Ready";
+  if (pct >= 50) return "AI-Capable";
+  if (pct >= 25) return "AI-Aware";
+  return "AI-Nascent";
+}
+
+function EmailGate({
+  score,
+  answers,
+  onContinue,
+}: {
+  score: number;
+  answers: Record<number, number>;
+  onContinue: (email: string) => void;
+}) {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
+
+  const pct = Math.round((score / MAX_SCORE) * 100);
+  const tier = scoreTierLabel(score);
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!email.trim()) { setError("Please enter your email address."); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) { setError("Please enter a valid email address."); return; }
+    setError("");
+    setSubmitting(true);
+    try {
+      await fetch("/api/quiz/submissions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: email.trim(),
+          name: name.trim() || undefined,
+          score,
+          answers,
+          submittedAt: new Date().toISOString(),
+        }),
+      });
+    } catch {
+      // best-effort — don't block the user if the API is unavailable
+    }
+    setSubmitting(false);
+    onContinue(email.trim());
+  }
+
+  return (
+    <motion.div
+      initial="hidden" animate="visible" variants={fadeInUp} transition={{ duration: 0.5 }}
+      className="max-w-lg mx-auto"
+    >
+      {/* Score teaser */}
+      <div className="bg-secondary text-white rounded-3xl p-8 mb-6 text-center">
+        <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <Lock className="w-8 h-8 text-primary" />
+        </div>
+        <p className="text-white/60 text-sm font-medium uppercase tracking-widest mb-2">Your score is ready</p>
+        <p className="font-display font-bold text-5xl text-primary mb-1">{pct}<span className="text-3xl text-white/60">%</span></p>
+        <p className="text-white/80 font-semibold text-lg mb-4">
+          {tier}
+        </p>
+        <p className="text-white/60 text-sm leading-relaxed">
+          Enter your email below to unlock your full results — detailed category scores, personalised recommendations, and next steps.
+        </p>
+      </div>
+
+      {/* Email form */}
+      <div className="bg-background border border-border rounded-3xl p-8">
+        <h2 className="font-display font-bold text-secondary text-xl mb-1">Unlock your results</h2>
+        <p className="text-muted-foreground text-sm mb-6">
+          We'll also send you a copy of your score so you can refer back to it. No spam — ever.
+        </p>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label htmlFor="eg-name" className="block text-xs font-medium text-muted-foreground mb-1.5">
+              First name <span className="text-muted-foreground/60">(optional)</span>
+            </label>
+            <input
+              id="eg-name"
+              type="text"
+              value={name}
+              onChange={e => setName(e.target.value)}
+              placeholder="e.g. Sarah"
+              className="w-full rounded-xl border border-border bg-muted/30 px-4 py-2.5 text-sm text-secondary placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
+            />
+          </div>
+          <div>
+            <label htmlFor="eg-email" className="block text-xs font-medium text-muted-foreground mb-1.5">
+              Work email <span className="text-red-500">*</span>
+            </label>
+            <input
+              id="eg-email"
+              type="email"
+              value={email}
+              onChange={e => { setEmail(e.target.value); if (error) setError(""); }}
+              placeholder="you@yourcompany.co.uk"
+              className={`w-full rounded-xl border ${error ? "border-red-400 bg-red-50" : "border-border bg-muted/30"} px-4 py-2.5 text-sm text-secondary placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/40 transition`}
+              required
+            />
+            {error && <p className="text-xs text-red-500 mt-1">{error}</p>}
+          </div>
+          <Button type="submit" size="lg" className="w-full gap-2" disabled={submitting}>
+            {submitting
+              ? <><Loader2 className="w-4 h-4 animate-spin" /> Saving…</>
+              : <><ArrowRight className="w-4 h-4" /> See my results</>
+            }
+          </Button>
+          <p className="text-center text-xs text-muted-foreground">
+            We respect your privacy. We'll never share your information or send you anything unwanted.
+          </p>
+        </form>
+      </div>
+    </motion.div>
+  );
+}
+
 /* ─── Page ──────────────────────────────────────────────────────── */
 
 export default function AIReadiness() {
-  const [quizState, setQuizState] = useState<"intro" | "quiz" | "results">("intro");
+  const [quizState, setQuizState] = useState<"intro" | "quiz" | "email" | "results">("intro");
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [score, setScore] = useState<number | undefined>(undefined);
 
   function startQuiz() { setQuizState("quiz"); window.scrollTo({ top: 0, behavior: "smooth" }); }
-  function handleComplete(ans: Record<number, number>, s: number) { setAnswers(ans); setScore(s); setQuizState("results"); window.scrollTo({ top: 0, behavior: "smooth" }); }
+  function handleComplete(ans: Record<number, number>, s: number) { setAnswers(ans); setScore(s); setQuizState("email"); window.scrollTo({ top: 0, behavior: "smooth" }); }
+  function handleEmailContinue(_email: string) { setQuizState("results"); window.scrollTo({ top: 0, behavior: "smooth" }); }
   function handleReset() { setAnswers({}); setScore(undefined); setQuizState("intro"); window.scrollTo({ top: 0, behavior: "smooth" }); }
 
   return (
     <div>
       {/* Hero */}
       <section className="bg-secondary text-white py-20 md:py-28 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(25_95%_53%_/_0.18)_0%,_transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(11_97%_55%_/_0.18)_0%,_transparent_55%)]" />
         <div className="container mx-auto px-4 md:px-6 relative">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
             <Badge className="mb-4 bg-primary/20 text-primary border-primary/30 gap-1.5">
@@ -850,7 +975,7 @@ export default function AIReadiness() {
               {[
                 { icon: <BarChart3 className="w-6 h-6 text-primary" />, title: "Your AI readiness score", desc: "Across 4 key areas: data, processes, people, and technology — with a percentage score for each." },
                 { icon: <Target className="w-6 h-6 text-primary" />, title: "Specific recommendations", desc: "Tailored to your score — not generic advice. Practical next steps for where your business actually is." },
-                { icon: <Clock className="w-6 h-6 text-primary" />, title: "5 minutes, completely free", desc: "No email required to see your results. Book an audit if you want to go deeper — no obligation." },
+                { icon: <Clock className="w-6 h-6 text-primary" />, title: "5 minutes, completely free", desc: "Just your email to unlock your results. Book an audit if you want to go deeper — no obligation." },
               ].map((item, i) => (
                 <motion.div
                   key={i} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -899,6 +1024,7 @@ export default function AIReadiness() {
           )}
 
           {quizState === "quiz" && <Quiz onComplete={handleComplete} />}
+          {quizState === "email" && <EmailGate score={score!} answers={answers} onContinue={handleEmailContinue} />}
           {quizState === "results" && <Results answers={answers} score={score!} onReset={handleReset} />}
         </div>
       </section>
