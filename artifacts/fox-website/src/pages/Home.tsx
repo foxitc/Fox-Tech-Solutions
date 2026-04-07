@@ -136,7 +136,7 @@ export default function Home() {
                 >
                   <path
                     d="M0 6 Q75 0 150 4 Q225 8 300 2"
-                    stroke="hsl(25 95% 53%)"
+                    stroke="hsl(11 97% 55%)"
                     strokeWidth="3"
                     strokeLinecap="round"
                     fill="none"
