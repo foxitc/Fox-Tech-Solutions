@@ -9,18 +9,15 @@ import {
   Search,
   Ruler,
   Wrench,
-  Activity,
-  Shield,
   Monitor,
   Network,
   Building2,
   Warehouse,
   ShoppingBag,
   Coffee,
-  Users,
-  Lock,
   Radio,
-  Settings,
+  Shield,
+  Activity,
 } from "lucide-react";
 
 const fadeInUp = {
@@ -49,7 +46,7 @@ const processSteps = [
     icon: <Ruler className="w-7 h-7 text-primary" />,
     step: "02",
     title: "Network Design",
-    desc: "No guesswork. Before we spec a single access point, we design the solution around your building layout, the number of users and devices, your traffic types (video calls, file sharing, IoT, VoIP), and your security requirements. Access point placement, SSID structure, VLAN design, and firewall rules — all documented before any installation begins.",
+    desc: "Before we spec anything, we design the solution around your building layout, number of users and devices, traffic types (video calls, file sharing, IoT, VoIP), and security requirements. Access point placement, SSID structure, VLAN design, and firewall rules — all documented and agreed before any installation begins. No guesswork.",
     points: [
       "Predictive heat mapping (how coverage will look before installation)",
       "Access point positioning calculated for overlap and capacity",
@@ -63,7 +60,7 @@ const processSteps = [
     icon: <Wrench className="w-7 h-7 text-primary" />,
     step: "03",
     title: "Professional Installation",
-    desc: "Qualified Unifi engineers install everything — cabling, mounting, configuration. Every access point is ceiling or wall-mounted cleanly, cabling is routed properly (trunking where visible, in-ceiling where not), and the network is fully configured and tested before we leave. Documentation left on-site and in your Fox IT portal.",
+    desc: "Experienced engineers install everything — cabling, mounting, configuration. Every access point is ceiling or wall-mounted cleanly, cabling is routed properly (trunking where visible, in-ceiling where not), and the network is fully configured and tested before we leave. Full documentation is left with you.",
     points: [
       "All Cat6 cabling installed and tested",
       "Access points cleanly mounted — no exposed cables",
@@ -76,8 +73,8 @@ const processSteps = [
   {
     icon: <Monitor className="w-7 h-7 text-primary" />,
     step: "04",
-    title: "Ongoing Management (Managed WiFi)",
-    desc: "For clients on Fox IT Managed IT, WiFi monitoring is included — we get alerted if an access point goes offline, can reboot it remotely, push firmware updates, and see performance trends. For standalone WiFi clients, we offer managed WiFi as an add-on service.",
+    title: "Ongoing Management",
+    desc: "For Fox IT Managed IT clients, WiFi monitoring is included — we're alerted if an access point goes offline, can reboot it remotely, push firmware updates, and see performance trends. For standalone WiFi clients, managed WiFi is available as an add-on.",
     points: [
       "AP uptime monitoring — we know before you do",
       "Remote configuration changes",
@@ -89,32 +86,28 @@ const processSteps = [
   },
 ];
 
-/* ─── Unifi product range ──────────────────────────────────────── */
+/* ─── What goes into a good network ───────────────────────────── */
 
-const unifiProducts = [
+const networkComponents = [
   {
-    icon: <Radio className="w-5 h-5 text-primary" />,
-    title: "Unifi Access Points",
-    desc: "The hardware that creates your WiFi. From compact indoor APs to outdoor units, high-density enterprise APs for busy environments, and long-range APs for warehouses and large open spaces. Every AP is managed through the central Unifi Network controller.",
-    examples: "U6 Lite, U6 Pro, U6 Enterprise, U6 Mesh, U6 Extender",
+    icon: <Radio className="w-6 h-6 text-primary" />,
+    title: "Access Points",
+    desc: "The hardware that creates your wireless signal. We specify the right type for your environment — compact indoor units for open offices, high-density APs for busy meeting rooms, long-range units for warehouses, and weatherproof outdoor access points for loading areas or external spaces. Placement and quantity are calculated from your survey data, not guesswork.",
   },
   {
-    icon: <Network className="w-5 h-5 text-primary" />,
-    title: "Unifi Switches",
-    desc: "Managed PoE switches that power access points over the network cable (no separate power supply needed) and provide centralised control of your entire wired network. VLAN support, port isolation, traffic analytics.",
-    examples: "USW-Lite-8-PoE, USW-Pro-24-PoE, USW-Enterprise series",
+    icon: <Network className="w-6 h-6 text-primary" />,
+    title: "Managed Switches",
+    desc: "Business-grade managed switches sit at the heart of your network — powering access points over PoE (no separate power supplies needed), enabling VLAN segmentation, and providing detailed traffic visibility. We size and configure switches to suit your environment, whether it's a single-floor office or a multi-building campus.",
   },
   {
-    icon: <Shield className="w-5 h-5 text-primary" />,
-    title: "Unifi Gateways (Firewall)",
-    desc: "Unifi's security gateways and cloud gateways act as your internet router and firewall. Advanced threat management, IDS/IPS, deep packet inspection, VPN, and site-to-site connectivity — all managed from the same Unifi console.",
-    examples: "UDM-SE, UDM-Pro, UCG-Ultra, USG",
+    icon: <Shield className="w-6 h-6 text-primary" />,
+    title: "Firewall & Gateway",
+    desc: "Your gateway controls how traffic enters and leaves your network — and a properly configured firewall is essential security infrastructure, not optional. We configure firewalls with appropriate rules, content filtering, VPN access, and intrusion detection as standard. Guest networks are always properly isolated from your business data.",
   },
   {
-    icon: <Monitor className="w-5 h-5 text-primary" />,
-    title: "Unifi Network Application (Controller)",
-    desc: "The central management platform for your entire Unifi network — cloud or self-hosted. Configure any device, see all connected clients, run topology maps, view analytics, and manage multiple sites from one place. Fox IT hosts and manages this for you.",
-    examples: "Cloud-hosted or UniFi OS Console",
+    icon: <Activity className="w-6 h-6 text-primary" />,
+    title: "Centralised Management",
+    desc: "All the hardware we install is managed from a single platform — giving us (and you, if useful) visibility across every device, every connected client, and every performance metric. We host and manage the controller, push configuration changes remotely, and monitor the health of your network without needing to visit site.",
   },
 ];
 
@@ -124,22 +117,22 @@ const industries = [
   {
     icon: <Building2 className="w-5 h-5 text-primary" />,
     title: "Offices",
-    desc: "Coverage across all meeting rooms, open plan areas, and private offices. Staff and guest SSIDs separated. High device density managed. Consistent speeds regardless of how many people are on calls.",
+    desc: "Coverage across all meeting rooms, open plan areas, and private offices. Staff and guest SSIDs properly separated. High device density handled. Consistent speeds regardless of how many people are on video calls simultaneously.",
   },
   {
     icon: <Warehouse className="w-5 h-5 text-primary" />,
     title: "Warehouses & Industrial",
-    desc: "Long-range APs for large open spaces. Coverage for handheld scanners, forklifts, CCTV, and mobile devices. IP66-rated outdoor units for loading areas. Multi-access-point handoff for roaming devices.",
+    desc: "Long-range access points for large open spaces. Reliable coverage for handheld scanners, forklifts, CCTV, and mobile devices. Weatherproof units for loading bays and external areas. Seamless roaming for devices that move around the site.",
   },
   {
     icon: <ShoppingBag className="w-5 h-5 text-primary" />,
     title: "Retail",
-    desc: "POS system reliability as priority. Separate SSID for card terminals, stock management devices, and customer WiFi. Captive portal for guest access with branded login page.",
+    desc: "Rock-solid connectivity for POS and card payment terminals is the priority. Separate SSIDs for stock management devices and customer WiFi. Captive portal for guest access with branded login if required.",
   },
   {
     icon: <Coffee className="w-5 h-5 text-primary" />,
     title: "Hospitality",
-    desc: "Guest WiFi with voucher or captive portal. Separate back-of-house network for EPOS and reservations systems. High density coverage for dining areas and function rooms.",
+    desc: "Guest WiFi with voucher or captive portal. Separate back-of-house network for EPOS, reservations, and kitchen systems. High-density coverage for dining rooms and function spaces.",
   },
 ];
 
@@ -150,8 +143,8 @@ export default function Wifi() {
     <div>
       <ServicePageHero
         subtitle="WiFi Solutions"
-        title="No dead zones. Qualified Unifi specialists."
-        description="We survey your space, design the right solution, and install it properly. Ubiquiti Unifi specialists — enterprise-grade WiFi that performs and keeps performing, managed ongoing."
+        title="No dead zones. Properly designed."
+        description="We survey your space, design the right solution for it, and install it properly. Enterprise-grade wireless networking — surveyed, designed, installed, and managed by engineers who do this every day."
       />
 
       {/* Stats */}
@@ -159,13 +152,13 @@ export default function Wifi() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "Unifi", label: "qualified installation engineers" },
-              { value: "100%", label: "coverage design — no guesswork" },
-              { value: "24/7", label: "AP monitoring for managed clients" },
-              { value: "10 Gbps", label: "max backhaul with enterprise switches" },
+              { value: "Survey first", label: "always — no guesswork installations" },
+              { value: "100%", label: "coverage designed before any hardware is ordered" },
+              { value: "24/7", label: "monitoring for managed WiFi clients" },
+              { value: "All sites", label: "offices, warehouses, retail, hospitality" },
             ].map((stat, i) => (
               <motion.div key={stat.label} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: i * 0.1, duration: 0.5 }}>
-                <div className="font-display font-bold text-3xl text-primary mb-1">{stat.value}</div>
+                <div className="font-display font-bold text-2xl text-primary mb-1">{stat.value}</div>
                 <div className="text-xs text-muted-foreground leading-snug">{stat.label}</div>
               </motion.div>
             ))}
@@ -180,7 +173,7 @@ export default function Wifi() {
             <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Our process</p>
             <h2 className="font-display font-bold text-3xl md:text-4xl text-secondary mb-5">Survey. Design. Install. Manage.</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Most business WiFi problems aren't the hardware — they're the lack of a proper process. Access points placed by guesswork, no channel planning, no VLAN structure, no documentation. We do it properly from the start.
+              Most business WiFi problems aren't about the hardware — they're about the lack of a proper process. Access points placed by guesswork, no channel planning, no VLAN structure, no documentation. We approach every project the same way: survey first, design second, install third. It's the only way to get it right.
             </p>
           </motion.div>
 
@@ -191,9 +184,7 @@ export default function Wifi() {
                 <div className="lg:col-span-1">
                   <div className="flex items-center gap-4 mb-3">
                     <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0">{step.icon}</div>
-                    <div>
-                      <div className="font-display font-bold text-4xl text-primary/20 leading-none">{step.step}</div>
-                    </div>
+                    <div className="font-display font-bold text-4xl text-primary/20 leading-none">{step.step}</div>
                   </div>
                   <h3 className="font-display font-bold text-xl text-secondary mb-2">{step.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
@@ -214,32 +205,26 @@ export default function Wifi() {
         </div>
       </section>
 
-      {/* Unifi platform */}
+      {/* What goes into a good network */}
       <section className="py-20 bg-muted/40">
         <div className="container mx-auto px-4 md:px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ duration: 0.6 }} className="mb-10">
-            <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">The platform</p>
-            <h2 className="font-display font-bold text-3xl md:text-4xl text-secondary mb-5">Why Ubiquiti Unifi?</h2>
-            <p className="text-muted-foreground leading-relaxed max-w-3xl mb-2">
-              Unifi is Ubiquiti's enterprise networking platform — access points, switches, gateways, cameras, and access control, all managed through a single unified controller. Enterprise performance at SMB-friendly pricing. It's why we recommend it for every business.
-            </p>
-            <p className="text-muted-foreground leading-relaxed max-w-3xl">
-              We're qualified Unifi specialists — which means we know how to get the most out of the platform and avoid the common mistakes. A poorly designed Unifi network can be just as frustrating as any other. Done properly, it's transformative.
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ duration: 0.6 }} className="max-w-3xl mb-12">
+            <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">The technology</p>
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-secondary mb-5">What goes into a properly built business network</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              We're hardware-agnostic and specify the right equipment for each project — not whatever we happen to stock. We work with leading enterprise networking vendors including Ubiquiti, Cisco Meraki, and others, depending on what best fits your environment, budget, and requirements.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {unifiProducts.map((prod, i) => (
-              <motion.div key={prod.title} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="bg-background border border-border rounded-2xl p-6 hover:border-primary/30 hover:shadow-md transition-all">
+            {networkComponents.map((comp, i) => (
+              <motion.div key={comp.title} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: i * 0.1, duration: 0.5 }}
+                className="bg-background border border-border rounded-2xl p-7 hover:border-primary/30 hover:shadow-md transition-all">
                 <div className="flex items-start gap-4 mb-3">
-                  <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">{prod.icon}</div>
-                  <h3 className="font-display font-bold text-lg text-secondary pt-1">{prod.title}</h3>
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">{comp.icon}</div>
+                  <h3 className="font-display font-bold text-lg text-secondary pt-1">{comp.title}</h3>
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-3">{prod.desc}</p>
-                <p className="text-xs text-muted-foreground font-medium">
-                  <span className="text-secondary font-semibold">Examples: </span>{prod.examples}
-                </p>
+                <p className="text-muted-foreground text-sm leading-relaxed">{comp.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -250,9 +235,9 @@ export default function Wifi() {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ duration: 0.6 }} className="text-center mb-12">
-            <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">By industry</p>
-            <h2 className="font-display font-bold text-3xl md:text-4xl text-secondary mb-4">We've done it across all environments</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">Offices, warehouses, retail, hospitality — each has unique requirements and we design for them specifically.</p>
+            <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">By environment</p>
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-secondary mb-4">We've done it across all settings</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">Every environment has different requirements. We design for what you actually have — not a generic template.</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {industries.map((ind, i) => (
@@ -267,23 +252,58 @@ export default function Wifi() {
         </div>
       </section>
 
+      {/* Why Fox */}
+      <section className="py-20 bg-muted/40">
+        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ duration: 0.6 }}
+            className="bg-secondary rounded-3xl p-10 md:p-14 relative overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(25_95%_53%_/_0.15)_0%,_transparent_60%)]" />
+            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+              <div>
+                <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Why Fox IT</p>
+                <h2 className="font-display font-bold text-3xl text-white mb-5">WiFi is only as good as the people who design it</h2>
+                <p className="text-white/70 leading-relaxed mb-4">
+                  We're experienced wireless networking engineers — not generalist IT providers who do WiFi on the side. Every installation is designed from a proper site survey, using the right hardware for the environment.
+                </p>
+                <p className="text-white/70 leading-relaxed">
+                  We specify enterprise-grade equipment — including Ubiquiti, Cisco Meraki and others — and manage everything from a centralised platform. You get a network that works today and scales with you.
+                </p>
+              </div>
+              <div className="space-y-3">
+                {[
+                  "Survey before every installation — no guesswork",
+                  "Hardware-agnostic — right tool for the job",
+                  "Full cabling and infrastructure work in-house",
+                  "Post-install documentation always provided",
+                  "Ongoing monitoring and management available",
+                  "East Midlands-based — on-site fast when needed",
+                ].map((point) => (
+                  <div key={point} className="flex items-center gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-white/80 text-sm">{point}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4 md:px-6 text-center max-w-2xl">
           <WifiIcon className="w-12 h-12 text-primary mx-auto mb-6" />
           <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-6">WiFi not cutting it?</h2>
           <p className="text-white/70 text-lg mb-8">
-            If your team is complaining about WiFi, it's already costing you in productivity and frustration. A proper survey often reveals the fix is simpler than expected. Let's find out.
+            If your team is complaining about the WiFi, it's already costing you. A proper survey often reveals the fix is simpler — and cheaper — than expected. Let's take a look.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button size="lg" className="font-bold px-10 group" data-testid="wifi-cta">
-                Book a WiFi audit <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-          </div>
+          <Link href="/contact">
+            <Button size="lg" className="font-bold px-10 group" data-testid="wifi-cta">
+              Book a WiFi survey <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
           <ul className="mt-8 flex flex-col sm:flex-row gap-4 justify-center text-white/60 text-sm">
-            {["Qualified Unifi engineers", "Full survey before any install", "East Midlands-based"].map((p) => (
+            {["Survey before every install", "Hardware-agnostic advice", "East Midlands-based engineers"].map((p) => (
               <li key={p} className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-primary" />{p}</li>
             ))}
           </ul>
