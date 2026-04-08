@@ -6,28 +6,32 @@ import { ArrowRight, CheckCircle2, HeartHandshake, Zap, Shield } from "lucide-re
 
 const teamMembers = [
   {
-    name: "Todd",
-    role: "Co-Founder & Managing Director",
-    bio: "Todd's been in IT since before WiFi was a thing. He's the one who answers the phone on a Saturday morning without complaining. Probably. He's the backbone of Fox — built the business from nothing and still personally oversees every client relationship.",
-    initials: "T",
+    name: "Ian Mackness",
+    role: "Founding Fox",
+    bio: "Founder and chief visionary, Ian is the driving force behind Fox ITC. He actively engages with customers and is personally invested in making sure every client relationship is the right one. He's the one who saw a fox in a map of Leicestershire — and ran with it.",
+    initials: "IM",
+    fact: "Represented England and the Royal Navy in Field Hockey.",
   },
   {
-    name: "Fabio",
-    role: "Co-Founder & Technical Director",
-    bio: "Fabio has a talent for making the complex simple. Whether it's designing a network from scratch or explaining cyber risk to a board, he does it without the waffle. He's been doing this a long time and still loves it.",
-    initials: "F",
+    name: "Mark Hutchinson",
+    role: "Head of Tech & The Pack",
+    bio: "An experienced Network Engineer who joined the Den in 2019. Mark now heads up the service team and makes sure the pack are supporting customers the way they should be — properly, and without fuss.",
+    initials: "MH",
+    fact: "His favourite song is Party in the USA. Don't ask.",
   },
   {
-    name: "Sarah",
-    role: "Client Success Manager",
-    bio: "Sarah is the reason our clients feel properly looked after. She keeps everything running smoothly, makes sure nobody waits around, and is genuinely the kind of person who makes Mondays better.",
-    initials: "S",
+    name: "Steven Thornley",
+    role: "Pack Member",
+    bio: "Steven completed his apprenticeship in 2022 and joined the Den as a 1st Line Support Cub. He's since grown into a field engineer and can now be found visiting customers out on the road.",
+    initials: "ST",
+    fact: "",
   },
   {
-    name: "James",
-    role: "Senior IT Engineer",
-    bio: "James is the quiet one who gets everything done. Behind the scenes, he's the reason your infrastructure doesn't keep you up at night. Patient, precise, and brilliant when things go sideways.",
-    initials: "J",
+    name: "Lerato Mputle",
+    role: "International Fox",
+    bio: "Lerato is the latest addition to the Pack, joining in 2025. Based in South Africa, Lerato supports our international customers and brings a global dimension to an already brilliant team.",
+    initials: "LM",
+    fact: "",
   },
 ];
 
@@ -80,7 +84,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6"
             >
-              We built Fox because IT support deserved better.
+              We didn't choose the Fox. The Fox chose us.
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -88,7 +92,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg text-white/70 leading-relaxed"
             >
-              It started with a simple frustration: IT support that was impersonal, slow, and spoke to you like you were an idiot. So we did something about it.
+              Founded in 2018 with a simple belief: Leicestershire businesses deserve IT support that puts people first — not technology.
             </motion.p>
           </div>
         </div>
@@ -106,19 +110,25 @@ export default function About() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="font-display font-bold text-3xl md:text-4xl text-secondary mb-6">Our story</h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  Fox ITC was born out of frustration. Todd and Fabio had both spent years working in IT — watching businesses get let down by providers who overpromised, underdelivered, and treated clients like ticket numbers rather than people.
-                </p>
-                <p>
-                  So they did something about it. Fox ITC was built from the ground up on a simple principle: treat every client the way you'd want to be treated yourself. That means answering the phone when it rings, fixing things properly the first time, and telling the truth even when it's not what someone wants to hear.
-                </p>
-                <p>
-                  Based in the East Midlands, we support businesses across the UK — from small teams finding their feet to established companies managing complex multi-site operations. The size of the client doesn't change the standard of care. Every business deserves IT support that actually works.
-                </p>
-                <p>
-                  We're not trying to be the biggest MSP in the country. We're trying to be the best one to work with. The kind of team you actually look forward to calling, because you know they'll sort it — and they'll be straight with you about what's going on.
-                </p>
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
+                <div>
+                  <h3 className="font-display font-bold text-lg text-secondary mb-2">Behind the name</h3>
+                  <p>
+                    People often ask if we're Leicester City fans. While our founder Ian is indeed a lifelong Foxes supporter, the truth behind our name is far more serendipitous. Like many entrepreneurs, Ian spent countless hours agonising over the perfect company name and logo — but the answer was right in front of him, literally. While mapping out the Leicestershire region we planned to serve, something remarkable emerged: the geographical boundaries formed the distinctive outline of a fox's head.
+                  </p>
+                  <p className="mt-3">
+                    It was a moment of clarity. The name wasn't just logical and local — it was meant to be.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-display font-bold text-lg text-secondary mb-2">From military precision to modern innovation</h3>
+                  <p>
+                    Drawing on his military background in Communications and Weapons Engineering, Ian brought a unique perspective to our visual identity. His expertise with radar systems, satellite, and wireless technology inspired our distinctive logo — seamlessly blending the fox with WiFi signals to create the eye-catching symbol you see today.
+                  </p>
+                  <p className="mt-3">
+                    That same military-grade attention to detail, that ability to see connections others might miss, defines how we approach every client's IT challenges. We don't just provide IT support — we look at your complete business landscape and find the solutions that make technology work for you, not against you.
+                  </p>
+                </div>
               </div>
             </motion.div>
 
@@ -133,11 +143,12 @@ export default function About() {
                 <h3 className="font-display font-bold text-xl text-secondary mb-6">At a glance</h3>
                 <ul className="space-y-4">
                   {[
-                    "UK-based team, UK-based support",
+                    "Founded in 2018 in Leicestershire",
+                    "Supporting businesses across the UK",
                     "Available when you need us — not just 9 to 5",
                     "No long-term lock-in contracts",
-                    "Qualified across Microsoft, Unifi, Cyber Essentials and more",
-                    "Small enough to care, experienced enough to deliver",
+                    "Qualified across Microsoft, Cyber Essentials, networking and more",
+                    "Military-grade attention to detail — every time",
                   ].map((point, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
@@ -149,9 +160,9 @@ export default function About() {
 
               <div className="mt-6 bg-primary rounded-2xl p-8">
                 <blockquote className="text-white font-display font-bold text-xl leading-snug mb-4">
-                  "We treat your business like it's our own. Because that's the only way to do it properly."
+                  "That ability to see connections others might miss — that's what defines how we approach every client's IT challenges."
                 </blockquote>
-                <p className="text-white/70 text-sm">— Todd &amp; Fabio, Founders</p>
+                <p className="text-white/70 text-sm">— Ian Mackness, Founding Fox</p>
               </div>
             </motion.div>
           </div>
@@ -208,7 +219,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="text-center mb-14"
           >
-            <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">The team</p>
+            <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">The pack</p>
             <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-secondary mb-4">
               Meet the people behind Fox
             </h2>
@@ -240,7 +251,6 @@ export default function About() {
             transition={{ delay: 0.4, duration: 0.5 }}
             className="text-center text-muted-foreground text-sm italic"
           >
-            {/* TODO: Replace placeholder team photos by editing TeamCard.tsx */}
             Real team photos coming soon — these placeholders are ready to swap out whenever you have images to upload.
           </motion.p>
         </div>
@@ -260,7 +270,7 @@ export default function About() {
               Let's have a proper conversation.
             </h2>
             <p className="text-white/70 text-lg mb-8 max-w-xl mx-auto">
-              No hard sell. No jargon. Just two people talking about whether Fox is the right fit for you.
+              No hard sell. No jargon. Just a straight-talking conversation about whether Fox is the right fit for you.
             </p>
             <Link href="/contact">
               <Button size="lg" className="font-bold text-base px-10 group" data-testid="about-cta-btn">
