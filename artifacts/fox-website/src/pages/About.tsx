@@ -158,11 +158,19 @@ export default function About() {
                 </ul>
               </div>
 
-              <div className="mt-6 bg-primary rounded-2xl p-8">
-                <blockquote className="text-white font-display font-bold text-xl leading-snug mb-4">
-                  "That ability to see connections others might miss — that's what defines how we approach every client's IT challenges."
-                </blockquote>
-                <p className="text-white/70 text-sm">— Ian Mackness, Founding Fox</p>
+              <div className="mt-6 bg-primary rounded-2xl p-8 space-y-6">
+                <div>
+                  <blockquote className="text-white font-display font-bold text-xl leading-snug mb-3">
+                    "We treat your business like it's our own. Because that's the only way to do it properly."
+                  </blockquote>
+                  <p className="text-white/70 text-sm">— Ian Mackness, Founding Fox</p>
+                </div>
+                <div className="border-t border-white/20 pt-6">
+                  <blockquote className="text-white/90 font-display font-bold text-lg leading-snug mb-3">
+                    "That ability to see connections others might miss — that's what defines how we approach every client's IT challenges."
+                  </blockquote>
+                  <p className="text-white/70 text-sm">— Ian Mackness, Founding Fox</p>
+                </div>
               </div>
             </motion.div>
           </div>
