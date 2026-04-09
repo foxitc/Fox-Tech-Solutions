@@ -1,6 +1,9 @@
 modules = ["nodejs-24"]
 
 [[artifacts]]
+id = "artifacts/fox-website"
+
+[[artifacts]]
 id = "artifacts/api-server"
 
 [[artifacts]]
@@ -32,3 +35,7 @@ externalPort = 8080
 [[ports]]
 localPort = 8081
 externalPort = 80
+
+[[ports]]
+localPort = 21657
+externalPort = 3000
