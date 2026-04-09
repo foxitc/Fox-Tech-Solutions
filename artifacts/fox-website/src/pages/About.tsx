@@ -18,6 +18,7 @@ const teamMembers = [
     bio: "An experienced Network Engineer who joined the Den in 2019. Mark now heads up the service team and makes sure the pack are supporting customers the way they should be — properly, and without fuss.",
     initials: "MH",
     fact: "His favourite song is Party in the USA. Don't ask.",
+    photo: "/mark.png",
   },
   {
     name: "Steven Thornley",
@@ -25,6 +26,7 @@ const teamMembers = [
     bio: "Steven completed his apprenticeship in 2022 and joined the Den as a 1st Line Support Cub. He's since grown into a field engineer and can now be found visiting customers out on the road.",
     initials: "ST",
     fact: "",
+    photo: "/steven.png",
   },
   {
     name: "Lerato Mputle",

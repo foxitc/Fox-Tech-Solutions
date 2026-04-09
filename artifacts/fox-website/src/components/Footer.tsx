@@ -3,29 +3,18 @@ import { Phone, Mail, MapPin, Linkedin, Twitter } from "lucide-react";
 import { FoxLogoIcon } from "@/components/FoxLogo";
 import { SiWhatsapp } from "react-icons/si";
 
-const serviceLinks = [
-  { title: "Managed IT Support", href: "/services/managed-it" },
-  { title: "Cyber Security", href: "/services/cyber-security" },
-  { title: "AI Services", href: "/services/ai" },
-  { title: "Microsoft 365", href: "/services/microsoft-365" },
-  { title: "Connectivity", href: "/services/connectivity" },
-  { title: "Mobile", href: "/services/mobile" },
-  { title: "WiFi", href: "/services/wifi" },
-  { title: "PAT Testing", href: "/services/pat-testing" },
-];
-
 export default function Footer() {
   return (
     <footer className="bg-secondary text-secondary-foreground">
-      <div className="container mx-auto px-4 md:px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="container mx-auto px-4 md:px-6 py-14">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-10">
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div className="max-w-xs">
             <div className="flex items-center gap-2 mb-4">
               <FoxLogoIcon className="h-12 w-auto" />
               <span className="font-display font-bold text-2xl text-white">Fox ITC</span>
             </div>
-            <p className="text-sm text-secondary-foreground/70 leading-relaxed mb-6">
+            <p className="text-sm text-secondary-foreground/70 leading-relaxed mb-4">
               IT support that feels like talking to a mate, not a call centre. We're a small, expert team — and we actually care.
             </p>
             <p className="text-xs text-secondary-foreground/50 italic leading-relaxed mb-5">
@@ -41,46 +30,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="font-display font-bold text-white text-sm uppercase tracking-widest mb-5">Services</h3>
-            <ul className="space-y-2.5">
-              {serviceLinks.map((link) => (
-                <li key={link.title}>
-                  <Link href={link.href} className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors">
-                    {link.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h3 className="font-display font-bold text-white text-sm uppercase tracking-widest mb-5">Company</h3>
-            <ul className="space-y-2.5">
-              <li>
-                <Link href="/" className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors">Home</Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors">About Us</Link>
-              </li>
-              <li>
-                <Link href="/pricing" className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors">Pricing</Link>
-              </li>
-              <li>
-                <Link href="/resources" className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors">Resources</Link>
-              </li>
-              <li>
-                <Link href="/ai-readiness" className="text-sm text-primary font-semibold hover:text-primary/80 transition-colors">AI Readiness Quiz ↗</Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors">Contact</Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
+          {/* Get in Touch */}
           <div>
             <h3 className="font-display font-bold text-white text-sm uppercase tracking-widest mb-5">Get in Touch</h3>
             <ul className="space-y-4">
@@ -103,9 +53,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-secondary-foreground/70">
-                  United Kingdom
-                </span>
+                <span className="text-sm text-secondary-foreground/70">Leicestershire, United Kingdom</span>
               </li>
             </ul>
           </div>
