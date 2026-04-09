@@ -58,30 +58,34 @@ const services = [
   },
 ];
 
-const teamMembers = [
+const teamMembers: { name: string; role: string; bio: string; initials: string; fact?: string; photo?: string }[] = [
   {
-    name: "Todd",
-    role: "Co-Founder & Managing Director",
-    bio: "Todd's been in IT since before WiFi was a thing. He's the one who answers the phone on a Saturday morning without complaining. Probably.",
-    initials: "T",
+    name: "Ian Mackness",
+    role: "Founding Fox",
+    bio: "Founder and chief visionary, Ian is the driving force behind Fox ITC. He actively engages with customers and is personally invested in making sure every client relationship is the right one.",
+    initials: "IM",
+    fact: "Represented England and the Royal Navy in Field Hockey.",
   },
   {
-    name: "Fabio",
-    role: "Co-Founder & Technical Director",
-    bio: "Fabio has a talent for making complex things simple. If it's broken, he'll fix it. If it isn't, he'll make it better.",
-    initials: "F",
+    name: "Mark Hutchinson",
+    role: "Head of Tech & The Pack",
+    bio: "An experienced Network Engineer who joined the Den in 2019. Mark heads up the service team and makes sure the pack are supporting customers properly, and without fuss.",
+    initials: "MH",
+    fact: "His favourite song is Party in the USA. Don't ask.",
+    photo: "/mark.png",
   },
   {
-    name: "Sarah",
-    role: "Client Success Manager",
-    bio: "Sarah is the reason our clients feel looked after. She keeps everything running smoothly and makes sure nothing falls through the cracks.",
-    initials: "S",
+    name: "Steven Thornley",
+    role: "Pack Member",
+    bio: "Steven completed his apprenticeship in 2022 and joined the Den as a 1st Line Support Cub. He's since grown into a field engineer visiting customers out on the road.",
+    initials: "ST",
+    photo: "/steven.png",
   },
   {
-    name: "James",
-    role: "Senior IT Engineer",
-    bio: "James is the quiet one who gets things done. Behind the scenes, he's the reason your infrastructure doesn't keep you up at night.",
-    initials: "J",
+    name: "Lerato Mputle",
+    role: "International Fox",
+    bio: "Lerato joined the Pack in 2025, supporting our international customers from South Africa. A brilliant addition to an already great team.",
+    initials: "LM",
   },
 ];
 

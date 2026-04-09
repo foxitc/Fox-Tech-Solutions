@@ -13,7 +13,7 @@ export default function TeamCard({ name, role, bio, initials, fact, photo }: Tea
       <div className="relative mb-5">
         <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-border group-hover:border-primary/50 transition-colors shadow-lg">
           {photo ? (
-            <img src={photo} alt={name} className="w-full h-full object-cover object-top" />
+            <img src={photo} alt={name} className="w-full h-full object-cover object-center" />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
               <span className="font-display font-bold text-3xl text-primary">{initials}</span>
