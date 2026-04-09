@@ -28,6 +28,8 @@ import {
   Key,
   Phone,
   BookOpen,
+  Loader2,
+  Send,
 } from "lucide-react";
 
 const fadeInUp = {
@@ -192,11 +194,96 @@ function getResult(score: number) {
   };
 }
 
+/* ─── Email Gate for Health Check ──────────────────────────────── */
+
+function HealthCheckEmailGate({ score, max, onContinue }: { score: number; max: number; onContinue: () => void }) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setError("");
+    if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+    setLoading(true);
+    try {
+      await fetch("/api/quiz/submissions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          quizType: "it-health-check",
+          name: name.trim(),
+          email: email.trim(),
+          score,
+          maxScore: max,
+          submittedAt: new Date().toISOString(),
+        }),
+      });
+    } catch {
+      /* silent — still unlock results */
+    }
+    setLoading(false);
+    onContinue();
+  }
+
+  const pct = Math.round((score / max) * 100);
+
+  return (
+    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+      <div className="text-center mb-6">
+        <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+          <Lock className="w-4 h-4" /> Your results are ready
+        </div>
+        <h3 className="font-display font-bold text-xl text-secondary mb-2">
+          You scored {score}/{max} — {pct}%
+        </h3>
+        <p className="text-muted-foreground text-sm">
+          Enter your details to unlock your full IT Health Check results, including the specific areas where your business is most exposed.
+        </p>
+      </div>
+
+      <form onSubmit={handleSubmit} className="space-y-3">
+        <div>
+          <label className="block text-xs font-medium text-muted-foreground mb-1.5">Your name</label>
+          <input
+            type="text"
+            value={name}
+            onChange={e => setName(e.target.value)}
+            placeholder="Jane Smith"
+            className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 bg-background"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-medium text-muted-foreground mb-1.5">Work email <span className="text-red-500">*</span></label>
+          <input
+            type="email"
+            value={email}
+            onChange={e => { setEmail(e.target.value); setError(""); }}
+            placeholder="jane@yourcompany.co.uk"
+            className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 bg-background ${error ? "border-red-400" : "border-border"}`}
+          />
+          {error && <p className="text-xs text-red-500 mt-1">{error}</p>}
+        </div>
+        <Button type="submit" className="w-full font-bold gap-2" size="lg" disabled={loading}>
+          {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
+          {loading ? "Sending…" : "Unlock my results"}
+        </Button>
+        <p className="text-xs text-muted-foreground text-center">No spam. No hard sell. Just your results.</p>
+      </form>
+    </motion.div>
+  );
+}
+
 function HealthCheck() {
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [selected, setSelected] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
+  const [emailCaptured, setEmailCaptured] = useState(false);
   const [direction, setDirection] = useState(1);
 
   const q = questions[current];
@@ -224,6 +311,7 @@ function HealthCheck() {
     setAnswers({});
     setSelected(null);
     setShowResult(false);
+    setEmailCaptured(false);
   }
 
   function prev() {
@@ -238,7 +326,11 @@ function HealthCheck() {
     .filter((q, i) => (answers[i] ?? 0) < 2)
     .map((q) => q.category);
 
-  if (showResult) {
+  if (showResult && !emailCaptured) {
+    return <HealthCheckEmailGate score={totalScore} max={MAX_SCORE} onContinue={() => setEmailCaptured(true)} />;
+  }
+
+  if (showResult && emailCaptured) {
     return (
       <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}>
         {/* Score ring */}
@@ -277,9 +369,6 @@ function HealthCheck() {
             <RotateCcw className="w-4 h-4" /> Retake
           </Button>
         </div>
-        <p className="text-xs text-muted-foreground text-center mt-4">
-          No email required. No spam. Just straight advice when you're ready.
-        </p>
       </motion.div>
     );
   }
